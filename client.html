@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- M E T A -->
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Small-scale app that demonstrates how PHP can interact with a MySQL database with the help of Ajax and JQuery.">
+  <meta name="keywords" content="HTML, CSS, Javascript, JQuery, PHP, Ajax, MySQL">
+  <meta name="author" content="Kaitlin Kidd">
+
+  <!-- F A V I C O N -->
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+  <!-- T I T L E -->
+  <title>(Mi)nerals2 - Ajax / PHP / JQuery / MySQL</title>
+
+  <!-- C S S -->
+  <link type="text/css" rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" media="screen" href="css/app.css">
+
+  <!-- F O N T S -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Jaldi" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- J Q U E R Y -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <!-- JQuery UI -->
+  <script src="js/slider.js" type="text/javascript"></script>
+  <!-- JQuery UI Slider -->
+  <script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <script src="jquery.counterup.min.js"></script>
+  <script>
+      jQuery(document).ready(function($) {
+          $('.counter').counterUp({
+              delay: 10,
+              time: 1000
+          });
+      });
+  </script>
+    <script src="js/jquery.easing.1.3.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+   <script async src="//cdn2.hubspot.net/hub/364394/file-1072987886-js/JS/html5shiv.js"></script>
+   <script async src="//cdn2.hubspot.net/hub/364394/file-1075879762-js/JS/respond.min.js"></script>
+   <![endif]-->
+
+  <style>
+      #multiple {
+          background: #d93434;
+          background-image: -webkit-linear-gradient(top, #d93434, #472bb8);
+          background-image: -moz-linear-gradient(top, #d93434, #472bb8);
+          background-image: -ms-linear-gradient(top, #d93434, #472bb8);
+          background-image: -o-linear-gradient(top, #d93434, #472bb8);
+          background-image: linear-gradient(to bottom, #d93434, #472bb8);
+          font-family: Arial;
+          color: #ffffff;
+          font-size: 20px;
+          padding: 10px 20px 10px 20px;
+          text-decoration: none;
+      }
+  </style>
+</head>
+<body>
+  <!-- N A V  -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#hero">(Mi)nerals2</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" style="float: right;">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#definition" class="page-scroll">What are minerals?</a></li>
+                    <li><a href="#formation" class="page-scroll">How are they formed?</a></li>
+                    <li><a href="#categories" class="page-scroll">How are they categorized?</a></li>
+                </ul>
+              </li>
+                <li><a href="#demo" class="page-scroll">Demo</a></li>
+                <li><a href="#code" class="page-scroll">Code</a></li>
+                <li><a href="#sources" class="page-scroll">Sources</a></li>
+                <li><a href="http://kiddography.com/" target="_blank">Contact</a></li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- H E R O  -->
+  <div id="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div id="hero-heading">
+                  <h1>(Mi)nerals<sub>2</sub></h1>
+                  <h3>interaction with mysql db with php &amp; ajax</h3>
+                  <hr id="hero-hr">
+                  <h5>database of common minerals found on earth</h5>
+                  <a href="#definition" class="btn scroller page-scroll">
+                      <i id="arrow" class="fa fa-diamond animated"></i>
+                  </a>
+                </div>
+                <div style="padding-top:30px;"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- {I N T R O} > D E F I N I T I O N  -->
+  <div id="definition">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <br />
+            <h2 style="color: #f4f3ee;">What are minerals?</h2>
+            <hr style="width: 220px;" /><br/><br/><br/>
+            <p style="color: #f4f3ee; font-size: 16px;">
+                Minerals are solid, inorganic and naturally occurring chemical compounds with definite internal structure. They are unable to exist as liquids or gases at standard room temperatures and pressures. Any substances created by a living organism (for example: amber and coral) do not classify as a mineral. All atoms within a mineral are arranged systematically, forming specific shapes and sizes. The Earth’s crust holds many different minerals with varying chemical compositions including silicon and oxygen. A few minerals have unique properties, such as being radioactive, magnetic or luminescent. Minerals should not be confused with rocks, which are either aggregates of several different minerals or contain no minerals without a distinct composition. Gemstones used for jewelry are cut and polished minerals. </p>
+            <br />
+            <div class="wrapper">
+                <div class="first">
+                    <div class="counterDiv">
+                        <span class="counter" style="color: #d9ba9d; font-size: 50px;">5,300</span>
+                        <img src="img/minerals.png" width="100" height="100" style="margin-left:10px;" />
+                        <p style="color: #343c4d; text-align: center;">known species of minerals</p>
+                    </div>
+                </div>
+                <div class="second">
+                    <div class="counterDiv">
+                        <span class="counter" style="color: #d9ba9d; font-size: 50px;">4.56</span>
+                        <img src="img/planet.png" width="90" height="90" style="margin-left:10px;" />
+                        <p style="color: #343c4d; text-align: center; padding-top: 10px;">billion years ago minerals first formed</p>
+                    </div>
+                </div>
+                <div class="third">
+                    <div class="counterDiv">
+                        <span class="counter" style="color: #d9ba9d; font-size: 50px;">90</span>%
+                        <img src="img/chemicals.png" width="90" height="90" style="margin-left:10px;" />
+                        <p style="color: #343c4d; text-align: center; padding-top: 10px;">of earth's crust composed of minerals</p>
+                    </div>
+                </div>
+            </div>
+            <br /> <br /> <br /> <br /> <br /><br /> <br /> <br /><br />
+            <script href="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+            <br/>
+            <p style="color: #f4f3ee; font-size: 16px;">
+                Common elements found within minerals are oxygen (O), silicon (Si), aluminum (Al), iron (Fe), calcium (Ca), sodium (Na), potassium (K), and magnesium (Mg). Every mineral contains a distinctive arrangement of elements which determines its type and to which class it belongs to. The composition of these elements can determine its crystalline structure and physical properties. Oftentimes, different minerals can contain the same chemical composition, yet have contrasting physical traits. For example, both diamond and graphite are composed of pure carbon (C). Despite this, the carbon atoms within diamonds form a three dimensional lattice while the carbon atoms within graphite form a two dimensional network. Because of this, graphite is soft, dull and opaque while diamonds are transparent, rare, and form the hardest natural substance in the world.
+            </p>
+            <br/><br/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- {I N T R O} > F O R M A T I O N -->
+  <div id="formation">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <br />
+          <h2 style="color: #f4f3ee;">How are they formed?</h2>
+          <hr style="width: 255px;" /><br/><br/><br/>
+          <p style="color: #f4f3ee; font-size: 16px;">
+              Minerals are formed from a variety of geological processes and determine its chemical composition and physical structure.
+          </p>
+          <!-- FORMATION 1 -->
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10">
+                      <p style="color: #f4f3ee; padding-top:10px; font-size: 16px;">
+                          <span style="color:#d9ba9d; font-size: 24px;">When magma</span> is expelled from an active volcano, it becomes lava as it flows onto the surface of earth’s crust. The cooling and solidification of lava can develop igneous rocks through the process of crystallization. When specific conditions are met, igneous rocks can contain mineral deposits, which are called ores. These deposits vary in chemical composition and have the ability to produce differing classes of minerals. Most minerals formed through this process are crystalline.
+                      </p>
+                  </div>
+                  <div class="col-lg-2">
+                      <div class="counterDivTwo">
+                          <img src="img/heat.png" width="100" height="100" style="margin-left: 30px;
+margin-top: 15px;" />
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- divider -->
+          <hr class="hr-divider" /><br /><br /><br /><br /><br />
+          <!-- divider -->
+
+          <!-- FORMATION 2 -->
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-2">
+                      <div class="counterDivTwo">
+                          <img src="img/evaporation.png" width="100" height="100" style="margin-left: 30px;
+margin-top: 15px;" />
+                      </div>
+                  </div>
+                  <div class="col-lg-10">
+                      <p style="color: #f4f3ee; padding-top:10px; font-size: 16px;">
+                          <span style="color:#d9ba9d; font-size: 24px;">Minerals can </span> also be found in sedimentary rocks. These rocks are formed by the deposition and cementation of material which was collected through the process of weathering and erosion of Earth’s surface. This material is often transported from a source to a destination through the movement of wind, water or ice. In areas of low precipitation or high evaporation temperatures, seawater can evaporate, leaving behind deposits of minerals. Seawater can contain chemicals such as sodium chloride, calcium, sulfate and gypsum, which are essential elements found within minerals. The most common minerals found in sedimentary rocks are quartz and calcite.
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- divider -->
+          <hr class="hr-divider" /><br /><br /><br /><br /><br />
+          <!-- divider -->
+
+          <!-- FORMATION 3 -->
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-10">
+                      <p style="color: #f4f3ee; padding-top:10px; font-size: 16px;">
+                          <span style="color:#d9ba9d; font-size: 24px;">Metamorphic rocks</span> are formed when an existing type of rock (called the protolith) is transformed under substantial amounts of either heat or pressure. Any temperatures greater than 150-200 degree Celsius or pressure above 1500 bars (~100000 Pa) can cause significant change to the structure of the rock. Minerals formed through these processes are known as index minerals (which include garnet). Each index mineral is the result of the minimum pressure and/or temperature the protolith must have achieved for the formation of that mineral.
+                      </p>
+                  </div>
+                  <div class="col-lg-2">
+                      <div class="counterDivTwo">
+                          <img src="img/erosion.png" width="100" height="100" style="margin-left: 30px;
+margin-top: 15px;" />
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <br /><br />
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+
+    <!-- {I N T R O} > C A T E G O R I E S  -->
+    <div id="categories">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <br />
+                    <h2 style="color: #f4f3ee;">How are they categorized? </h2>
+                    <hr style="width: 305px;" /><br/><br/><br/>
+
+                    <div class="wrapper">
+                      <div class="row">
+                          <div class="col-lg-12">
+                            <p style="color: #f4f3ee; font-size: 16px;">
+                                Minerals are classified and organized by a variety of different chemical and physical properties that make them unique.
+                            </p>
+                            <br />
+                          </div>
+                        </div>
+                        <div class="first-categories">
+                            <div class="counterDivThree">
+                                <p style="font-size:35px; text-align:center; color: #d9ba9d; padding-top:10px;">Class</p>
+                                <p style="color: #f4f3ee; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae velit et risus posuere fermentum eget commodo magna. Suspendisse ultricies consectetur vestibulum. Praesent ut nibh non mi mollis congue non eu erat. </p>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div class="counterDivThree">
+                                <p style="font-size:35px; text-align:center; color: #d9ba9d; padding-top:10px;">Subclass</p>
+                                <p style="color: #f4f3ee; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae velit et risus posuere fermentum eget commodo magna. Suspendisse ultricies consectetur vestibulum. Praesent ut nibh non mi mollis congue non eu erat. </p>
+                            </div>
+                        </div>
+                        <div class="third">
+                            <div class="counterDivThree">
+                                <p style="font-size:35px; text-align:center; color: #d9ba9d; padding-top:10px;">Composition</p>
+                                <p style="color: #f4f3ee; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae velit et risus posuere fermentum eget commodo magna. Suspendisse ultricies consectetur vestibulum. Praesent ut nibh non mi mollis congue non eu erat. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="first-categories">
+                            <div class="counterDivThree">
+                                <p style="font-size:35px; text-align:center; color: #d9ba9d; padding-top:10px;">Color</p>
+                                <p style="color: #f4f3ee; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae velit et risus posuere fermentum eget commodo magna. Suspendisse ultricies consectetur vestibulum. Praesent ut nibh non mi mollis congue non eu erat. </p>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div class="counterDivThree">
+                                <p style="font-size:35px; text-align:center; color: #d9ba9d; padding-top:10px;">Fracture</p>
+                                <p style="color: #f4f3ee; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae velit et risus posuere fermentum eget commodo magna. Suspendisse ultricies consectetur vestibulum. Praesent ut nibh non mi mollis congue non eu erat. </p>
+                            </div>
+                        </div>
+                        <div class="third">
+                            <div class="counterDivThree">
+                                <p style="font-size:35px; text-align:center; color: #d9ba9d; padding-top:10px;">Mohs</p>
+                                <p style="color: #f4f3ee; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae velit et risus posuere fermentum eget commodo magna. Suspendisse ultricies consectetur vestibulum. Praesent ut nibh non mi mollis congue non eu erat. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    </div>
+
+
+  <!-- D E M O -->
+  <div id="demo">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <h2 style="color: #f4f3ee;">Demo</h2>
+            <p style="color: #f4f3ee;">Search for minerals based on different criteria.</p>
+            <hr style="width: 70px;" /><br/><br/><br/>
+        </div>
+      </div>
+      <div class="row">
+        <!-- ROW 1 -->
+        <div class="col-md-4">
+          <!--******************************************************** -->
+          <!--*******************SELECT ALL *********************** -->
+          <!--******************************************************** -->
+          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 50px; border-radius: 10px; margin-bottom:10px;">
+            <button style="background-color: #484f5e; border-color: #484f5e;" class="btn btn-primary" type="button" id="button">Select All</button>
+          </div>
+
+          <!--******************************************************** -->
+          <!--*******************NAME SEARCH *********************** -->
+          <!--******************************************************** -->
+          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 100px; border-radius: 10px; margin-bottom:10px;">
+              <p style="color: #f4f3ee;"><span class="fa fa-search" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">name</span>.</p>
+              <input class="form-control" style="width: 80%; float: left; margin-right: 5px;" type="text" id="name" />
+              <button class="btn btn-default" style="float: left;" id="button3">Search</button>
+          </div>
+
+          <!--******************************************************** -->
+          <!--*******************LETTER SEARCH *********************** -->
+          <!--******************************************************** -->
+          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 180px; border-radius: 10px; margin-bottom:10px;">
+              <p style="color: #f4f3ee;"><span class="fa fa-font" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">letter</span>.</p>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="a" value="A">A</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="b" value="B">B</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="c" value="C">C</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="d" value="D">D</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="e" value="E">E</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="f" value="F">F</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="g" value="G">G</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="h" value="H">H</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="i" value="I">I</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="j" value="J">J</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="k" value="K">K</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="l" value="L">L</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="m" value="M">M</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="n" value="N">N</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="o" value="O">O</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="p" value="P">P</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="q" value="Q">Q</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="r" value="R">R</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="s" value="S">S</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="t" value="T">T</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="u" value="U">U</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="v" value="V">V</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="w" value="W">W</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="x" value="X">X</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="y" value="Y">Y</button>
+              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="z" value="Z">Z</button>
+              <br/>
+          </div>
+
+          <!--******************************************************** -->
+          <!--*******************COMPOSITION SEARCH *********************** -->
+          <!--******************************************************** -->
+          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 200px; border-radius: 10px; margin-bottom:10px;">
+              <p style="color: #f4f3ee;"><span class="fa fa-flask" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">composition</span>.</p>
+              <button style="margin-bottom:10px;" class="composition btn btn-outline-primary" id="mg" value="Mg">Mg</button>
+              <button style="margin-bottom:10px;" class="composition btn btn-outline-primary" id="si" value="Si">Si</button>
+              <br/>
+          </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="col-md-4">
+          <!--******************************************************** -->
+          <!--*******************CLASS SEARCH *********************** -->
+          <!--******************************************************** -->
+          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 180px; border-radius: 10px; margin-bottom:10px;">
+              <p style="color: #f4f3ee;"><span class="fa fa-object-group" aria-hidden="true"></span> | Search by <span style="color:#d9ba9d;">class</span>.</p>
+              <input class="class" type="radio" id="silica" value="silica" name="class"> <label>silica</label>
+              <input class="class" type="radio" id="mica" value="mica" name="class"> <label>mica</label>
+              <button class="btn btn-default" id="class_btn">Search</button>
+              <br/>
+          </div>
+
+            <!--******************************************************** -->
+            <!--*******************COLOR SEARCH *********************** -->
+            <!--******************************************************** -->
+            <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 150px; border-radius: 10px; margin-bottom:10px;">
+                <p style="color: #f4f3ee;"><span class="fa fa-eyedropper" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">color</span>.</p>
+                <button title="red" class="color btn btn-outline-primary masterTooltip" style="background-color: #ff4c4c; width: 40px; height: 40px; margin-bottom:10px;" id="red" value="red"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #ffb732; width: 40px; height: 40px; margin-bottom: 10px;" id="orange" value="orange"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #ffff7f; width: 40px; height: 40px; margin-bottom: 10px;" id="yellow" value="yellow"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #99cc99; width: 40px; height: 40px; margin-bottom: 10px;" id="green" value="green"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #6666ff; width: 40px; height: 40px; margin-bottom: 10px;" id="blue" value="blue"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #b266b2; width: 40px; height: 40px; margin-bottom: 10px;" id="purple" value="purple"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #ffd9df; width: 40px; height: 40px; margin-bottom: 10px;" id="pink" value="pink"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #e5e5e5; width: 40px; height: 40px; margin-bottom: 10px;" id="white" value="white"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #c6af7c; width: 40px; height: 40px; margin-bottom: 10px;" id="brown" value="brown"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #b2b2b2; width: 40px; height: 40px; margin-bottom: 10px;" id="gray" value="gray"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #191919; width: 40px; height: 40px; margin-bottom: 10px;" id="black" value="black"></button>
+                <button class="color btn btn-outline-primary" style="background-color: transparent; width: 40px; height: 40px; border: 1px solid black; margin-bottom: 10px;" id="colorless" value="colorless"></button>
+                <button class="color btn btn-outline-primary" style="background-color: #b20000; width: 40px; height: 40px; margin-bottom: 10px;" id="multiple" value="multiple"></button>
+                <br/>
+                </br/>
+            </div>
+
+            <!--******************************************************** -->
+            <!--*******************FRACTURE SEARCH *********************** -->
+            <!--******************************************************** -->
+            <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 80px; border-radius: 10px; margin-bottom:10px;">
+                <p style="color: #f4f3ee;"><span class="fa fa-industry" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">fracture</span>.</p>
+                <select id="fracture_mineral" style="width: 100%;" class="fracture_mineral" onChange="search_fracture();">
+                 <option value="" name="" class="">-- Select --</option>
+                 <option value="conchoidal" name="fracture" class="fracture">conchoidal</option>
+                 <option value="micaceous" name="fracture" class="fracture">micaceous</option>
+               </select>
+                <br/>
+                </br/>
+            </div>
+
+            <!--******************************************************** -->
+            <!--*******************MOHS SEARCH *********************** -->
+            <!--******************************************************** -->
+            <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 120px; border-radius: 10px; margin-bottom:10px;">
+                <p style="color: #f4f3ee;"><span class="fa fa-area-chart" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">mohs</span>.</p>
+                <div id="slider" style="width: 332px; margin-left:5px; margin-bottom:5px;"> </div>
+                <input class="form-control" id="amount" type="text" readonly/>
+                <br/>
+            </div>
+          </div>
+
+
+
+                <div class="col-md-4">
+                  <h4 style="color: #f4f3ee; text-align:center;">RESULTS</h2>
+                  <hr style="width: 100%;" /><br/><br/><br/>
+                    <div id="content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <!-- C O D E -->
+  <div id="code">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 style="color: #f4f3ee;">Code</h2>
+            <hr style="width: 60px;" /><br/><br/><br/>
+
+            <!-- PHP's MySQLi -->
+            <h4>PHP's MySQLi</h4>
+              <p class="code-info">AJAX is essential for creating dynamic web pages where content can be updated seamlessly without the need for refreshing the whole page itself. When an event occurs, triggered by the user, data is exchanged between the browser and the server. When an http request is sent from the browser to the server, a response is created and the updated data is sent back to the browser to show the changed page content.</p>
+
+              <p class="code-info">In this simple app, the current web page <span style="color:#c3a78d;">client.html </span>acts as a client and a PHP file <span style="color:#c3a78d;">server.php </span> is used to simulate a server. Data is exchanged between the two files when Javascript is triggered by three different HTML DOM events: <a class="link" href="http://www.w3schools.com/jsref/event_onkeyup.asp" target="_blank">onkeyup</a>, <a class="link" href="http://www.w3schools.com/jsref/event_onclick.asp"
+                      target="_blank">onclick</a> and <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a>.</p>
+
+              <p class="code-info">There are three different ways to search for stars: searching by name, filtering by distance in light years, and selecting the constellation that the star belongs to. Each method requires making an <a class="link" href="http://api.jquery.com/jquery.ajax/"
+                      target="_blank">ajax call</a> with the help of a JQuery script.</p>
+
+              <!-- mysqli class -->
+              <h5>mysqli class</h5>
+
+                <p class="code-info">A user will be able to search a small hard-coded array of star "objects", containing attributes such as name, distance (in light years) and the constellation that contains the star. The simulation of star "objects" will be shown in the server file code below.</p>
+
+              <!-- AJAX-->
+              <h4>AJAX</h4>
+                <p class="code-info">As a character is entered or removed within the text field, results will be updated asynchronously. The input collected from the user will be compared against the collection of star names stored as attributes within the star objects. An ajax call is continuously sifting through the star names to find the ones that match the input.</p>
+
+              <!-- how it works -->
+              <h4>How it works</h4>
+
+                <!-- A C C O R D I A N S -->
+
+              <!-- SELECT ALL -->
+                <button id="selectAll" class="accordion">select all</button>
+                  <div class="panel">
+                  <!-- client -->
+                  <h5>client</h5>
+                  <p class="code-info">For our web page acting as the client, we have a basic input field with an id and function that is triggered <a class="link" href="http://www.w3schools.com/jsref/event_onkeyup.asp" target="_blank">onkeyup:</a></p>
+
+                  <pre><code>&lt;h4&gt;Search stars by name: &lt;/h4&gt;<br />&lt;input class="form-control" type="text" id="star_name" name="star_name" onkeyup="getStarsByName();"/&gt;</code></pre>
+
+                  <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+
+                  <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+
+                  <!-- ajax -->
+                  <h5>Ajax</h5>
+
+                  <p class="code-info">By importing the JQuery library, you can perform an asynchronous http request with <a class="link" href="http://api.jquery.com/jquery.ajax/" target="_blank">$.ajax.</a> The following function is needed to form the connection between
+                      client and server:</p>
+
+                  <pre><code>function getStarsByName() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_name=" + $('#star_name').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+
+                  <p class="code-info">In the above function, if the ajax call is successful, the name, distance and constellation attributes of the star "objects" (in JSON format) will be appended to the &lt;p&gt;, which can be seen on <span style="color:#9d8186;">client.html</span>                            almost instantaneously. You can see where name, distance and constellation come from by viewing the contents of the <span style="color:#9d8186;">server.php </span>below. </p>
+
+                  <!-- server -->
+                  <h5>Server</h5>
+                  <p class="code-info">Within <span style="color:#9d8186;">server.php </span>, you can use <a class="link" href="http://php.net/manual/en/reserved.variables.request.php" target="_blank">$_REQUEST</a> to receive the data from the client and store it into
+                      a variable. Afterwards, you can store the value of the characters typed into the input field gathered from the data provided by the ajax call and store that into a separate variable: </p>
+
+                  <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [1.] Star name<br />$name = $data['star_name']; // collect the input from form input 'star_name'</code> </pre>
+
+                  <p class="code-info">The hard-coded small-scale star database is held within a <a class="link" href="http://www.w3schools.com/php/php_arrays_multi.asp" target="_blank">php array of arrays</a> in the following format: </p>
+
+                  <pre><code>// data array<br />$star_array = array( <br />&#09;array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2', 'attribute3' =&gt; 'value3' ... ), <br />&#09;array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2', 'attribute3' =&gt; 'value3' ... )<br />);</code></pre>
+
+                  <p class="code-info">In this example, the array of arrays is formatted like so: </p>
+
+                  <pre><code>$star_data = array( <br />&#09;array('name' =&gt; 'Proxima Centauri', 'distance' =&gt; '4.243',  'constellation' =&gt; 'Centaurus','evolution' =&gt; 'Red Dwarf'),<br />&#09;array('name' =&gt; 'Alpha Centauri A', 'distance' =&gt; '4.37',   'constellation' =&gt; 'Centaurus', 'evolution' =&gt; 'Main Sequence'),<br />&#09;.... <br />);</code></pre>
+
+                  <p class="code-info">In order to send a response back to the client, we must determine if the user has found any star name matches within our php "database". Since results will be continuously updated, new results should appear or disappear as the
+                      user types or deletes characters within the text field. We can iterate through all the star names within the star objects and check that the string of characters are found within it. The more characters a user types, the more
+                      specific the results will be and less likely to find a hit. However, if a user only types a few characters, it will display more results from a broader search. We can achieve this search functionality with a simple for-loop:
+                      </p>
+
+                  <pre><code>// results array<br />$results = array();<br /><br />for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) {<br />&#09;if( stripos( $star_data[$count]['name'] , $name ) !== false ) {<br />&#09;&#09;array_push( $results , $star_data[$count] );<br />&#09;}<br />}</code></pre>
+
+                  <p class="code-info">We can create a new array, $results, that will hold the final results of the search that will be sent back to the client. To store results into that array, we will first create an iterator variable, $count, that will start at value
+                      0 and loop through the size of the $star_data array. For each iteration, $name will be checked to see if it can be found within the ['name'] attribute of the star object, and if so, the star object will be pushed to the $results
+                      array. If not, it is skipped. <a class="link" href="http://php.net/manual/en/function.stripos.php" target="_blank">stripos</a> is used to find an occurance of the value of $name within the ['name'].</p>
+
+                  <p class="code-info">And finally, the data is returned to the client in JSON format to be read by the client: </p>
+
+                  <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+
+                  <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+                </div>
+
+                <!-- SEARCH BY NAME -->
+                <button id="searchByName" class="accordion">search by name</button>
+                    <div class="panel">
+                        <!-- client -->
+                        <h5>Client</h5>
+                        <p class="code-info">The user can select a distance filter from three available buttons: </p>
+
+                        <pre><code>&lt;button id=&quot;star_distance_one&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_one&quot; type=&quot;button&quot; value=&quot;5&quot; onclick=&quot;getStarsByDistanceFilterOne();&quot;&gt; &lt; 5 &lt;/button&gt;<br/>&lt;button id=&quot;star_distance_two&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_two&quot; type=&quot;button&quot; value=&quot;10&quot; onclick=&quot;getStarsByDistanceFilterTwo();&quot;&gt; 5 - 10 &lt;/button&gt;<br/>&lt;button id=&quot;star_distance_three&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_three&quot; type=&quot;button&quot; value=&quot;15&quot; onclick=&quot;getStarsByDistanceFilterThree();&quot;&gt; 10 + &lt;/button&gt;</code></pre>
+
+                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+
+                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+
+                        <!-- ajax -->
+                        <h5>Ajax</h5>
+
+                        <p class="code-info">The ajax functions for the distance filtering is identical to the search function, except for the sources of the data that is to be sent to the server. The data to be sent is the value that is stored within each button: 5, 10 and
+                            15. Each function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onclick.asp" target="_blank">onclick</a> event. Once again, JQuery is needed to make the $.ajax call: </p>
+
+                        <pre><code>function getStarsByDistanceFilterOne() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_distance_one=" + $('#star_distance_one').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+
+                        <p class="code-info">Once again, the star's name, distance and constellation will be outputted within a div that is appended to #star_results. Only those that "fit" the filter will be appended, as determined by a function within the server file, below.
+                            Also, function getStarsByDistanceFilterTwo (between 5 - 10) and getStarsByDistanceFilterThree (10+ ) have the same ajax call, only changing the button ids, star_distance_two and star_distance_three respectively.</p>
+
+                        <!-- server -->
+                        <h5>Server</h5>
+
+                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but new varaibles must be created: </p>
+
+                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [2.] Star distance<br />$distance_one = $_POST['star_distance_one'];<br />$distance_two = $_POST['star_distance_two'];<br />$distance_three = $_POST['star_distance_three'];</code> </pre>
+
+                        <p class="code-info">Three for loops are used to compare each distance attribute of the star object within the array to designated filter values: </p>
+
+                        <pre><code>// results array<br />$results = array();<br /><br />// distance filters <br />$distance_far = 5; <br />$distance_farther = 10;<br /> $distance_farthest = 15;<br/><br/>// &lt;5 filter selected... <br/>if ($distance_one == $distance_far) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &lt;= $distance_far ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;}<br/> } <br/><br/>// 5 - 10 filter selected... <br/>if ($distance_two == $distance_farther) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &lt;= $distance_farther &amp;&amp; $star_data[$count]['distance'] &gt;= $distance_far ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;} <br/>} <br/><br/>// 10+ filter selected... <br/>if ($distance_three == $distance_farthest) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &gt;= $distance_farther ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;} <br/>}</code> </pre>
+
+                        <p class="code-info">The results are stored into $results and encoded in JSON before being appended to the id star_results:</p>
+
+                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+
+                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+                    </div>
+
+                <!-- SEARCH BY LETTER -->
+                <button id="searchByLetter" class="accordion">search by letter</button>
+                    <div class="panel">
+
+                        <!-- client -->
+                        <h5>Client</h5>
+                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
+                            select tag:</p>
+
+                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
+
+                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+
+                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+
+                        <!-- ajax -->
+                        <h5>Ajax</h5>
+
+                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
+                            is triggered.</p>
+
+                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+
+                        <!-- server -->
+                        <h5>Server</h5>
+
+                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
+                            </p>
+
+                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
+
+                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
+                            a for loop to find matches: </p>
+
+                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
+
+                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
+
+                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+
+                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+                    </div>
+
+                <!-- SEARCH BY COMPOSITION -->
+                <button id="searchByComposition" class="accordion">search by composition</button>
+                    <div class="panel">
+
+                        <!-- client -->
+                        <h5>Client</h5>
+                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
+                            select tag:</p>
+
+                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
+
+                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+
+                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+
+                        <!-- ajax -->
+                        <h5>Ajax</h5>
+
+                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
+                            is triggered.</p>
+
+                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+
+                        <!-- server -->
+                        <h5>Server</h5>
+
+                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
+                            </p>
+
+                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
+
+                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
+                            a for loop to find matches: </p>
+
+                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
+
+                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
+
+                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+
+                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+                    </div>
+
+                <!-- SEARCH BY CLASS -->
+                <button id="searchByClass" class="accordion">search by class</button>
+                    <div class="panel">
+
+                        <!-- client -->
+                        <h5>Client</h5>
+                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
+                            select tag:</p>
+
+                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
+
+                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+
+                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+
+                        <!-- ajax -->
+                        <h5>Ajax</h5>
+
+                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
+                            is triggered.</p>
+
+                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+
+                        <!-- server -->
+                        <h5>Server</h5>
+
+                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
+                            </p>
+
+                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
+
+                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
+                            a for loop to find matches: </p>
+
+                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
+
+                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
+
+                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+
+                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+                    </div>
+
+                <!-- SEARCH BY COLOR -->
+                <button id="searchByColor" class="accordion">search by color</button>
+                    <div class="panel">
+
+                        <!-- client -->
+                        <h5>Client</h5>
+                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
+                            select tag:</p>
+
+                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
+
+                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+
+                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+
+                        <!-- ajax -->
+                        <h5>Ajax</h5>
+
+                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
+                            is triggered.</p>
+
+                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+
+                        <!-- server -->
+                        <h5>Server</h5>
+
+                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
+                            </p>
+
+                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
+
+                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
+                            a for loop to find matches: </p>
+
+                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
+
+                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
+
+                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+
+                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+                    </div>
+
+                <!-- SEARCH BY FRACTURE -->
+                <button id="searchByFracture" class="accordion">search by fracture</button>
+                  <div class="panel">
+
+                      <!-- client -->
+                      <h5>Client</h5>
+                      <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
+                          select tag:</p>
+
+                      <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
+
+                      <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+
+                      <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+
+                      <!-- ajax -->
+                      <h5>Ajax</h5>
+
+                      <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
+                          is triggered.</p>
+
+                      <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+
+                      <!-- server -->
+                      <h5>Server</h5>
+
+                      <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
+                          </p>
+
+                      <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
+
+                      <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
+                          a for loop to find matches: </p>
+
+                      <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
+
+                      <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
+
+                      <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+
+                      <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+                  </div>
+
+                  <!-- SEARCH BY MOHS -->
+                  <button id="searchByMohs" class="accordion">search by mohs</button>
+                    <div class="panel">
+
+                        <!-- client -->
+                        <h5>Client</h5>
+                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
+                            select tag:</p>
+
+                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
+
+                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+
+                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+
+                        <!-- ajax -->
+                        <h5>Ajax</h5>
+
+                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
+                            is triggered.</p>
+
+                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+
+                        <!-- server -->
+                        <h5>Server</h5>
+
+                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
+                            </p>
+
+                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
+
+                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
+                            a for loop to find matches: </p>
+
+                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
+
+                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
+
+                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+
+                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- S O U R C E S -->
+    <div id="sources">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h2 style="color: #f4f3ee;">Sources</h2>
+                    <hr style="width: 90px;" /><br/><br/><br/>
+
+                    <!-- Mineral Data -->
+                    <h4>Mineral Data</h4>
+                    <ul class="sources-list">
+                        <li><a class="link-sources" href="http://www.sandatlas.org/composition-of-the-earths-crust/" target="_blank">Composition of the crust</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.sandatlas.org/about-2/" target="_blank">Siim Sepp</a>                            <span style="color: white;"> - Statistics about the composition of the Earth. </span></li>
+                        <li><a class="link-sources" href="http://www.universetoday.com/111586/how-life-could-have-caused-most-minerals-on-earth/" target="_blank">How Life Could Have Produced Most Minerals On Earth</a> <span style="color: white;">by </span><a class="link-sources"
+                                href="http://www.universetoday.com/author/pars3c/" target="_blank">Elizabeth Howell (December 23, 2015 © Universe Today)</a> <span style="color: white;"> - In-depth article about how minerals were produced on Earth. </span></li>
+                        <li><a class="link-sources" href="http://www.nhm.org/site/research-collections/mineral-sciences/faqs" target="_blank">Mineral Sciences FAQs </a> <span style="color: white;">by </span><a class="link-sources" href="https://www.nhm.org/site/" target="_blank">The Natural History Museum of Los Angeles County</a>                            <span style="color: white;"> - Great overview of mineral information. </span></li>
+                        <li><a class="link-sources" href="http://www.johnbetts-fineminerals.com/jhbnyc/referenc.htm" target="_blank">Mineral Species Quick Reference Guide</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.johnbetts-fineminerals.com/index.htm"
+                                target="_blank">© John H. Betts</a> <span style="color: white;"> - Thorough list of 900 minerals and their composition, class, subclass and type locality.  </span></li>
+                        <li><a class="link-sources" href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> <span style="color: white;">- Additional data about mineral properties, including fracture, mohs value, and class.</span></li>
+                    </ul>
+
+                    <!-- Icons -->
+                    <h4>Icons</h4>
+                    <ul class="sources-list">
+                        <li><a class="link-sources" href="http://www.flaticon.com/" target="_blank">FlatIcon</a> <span style="color: white;">- Free vector icons available for use.</span></li>
+                    </ul>
+
+                    <!-- Code -->
+                    <h4>Code</h4>
+                    <ul class="sources-list">
+                        <li><a class="link-sources" href="http://www.w3schools.com/howto/howto_js_accordion.asp" target="_blank">Accordion</a> <span style="color: white;">- Collapsible accordion featured on w3schools.com</span></li>
+                        <li><a class="link-sources" href="https://github.com/bfintal/Counter-Up" target="_blank">Counter-Up</a> <span style="color: white;">- A lightweight jQuery plugin that counts up to a targeted number when the number becomes visible by <a class="link-sources" href="https://github.com/bfintal" target="_blank">Benjamin Intal</a>. </span></li>
+                    </ul>
+
+                    <!-- Inspiration -->
+                    <h4>Inspiration</h4>
+                    <ul class="sources-list">
+                        <li><a class="link-sources" href="https://www.youtube.com/watch?v=a-uu3LTT-Lc" target="_blank">JQuery Ajax PHP Tutorial</a> <span style="color: white;">YouTube video by </span> <a class="link-sources" href="https://www.youtube.com/channel/UC3D3EFR1H6H18OiGis7-HNw"
+                                target="_blank">Julfi Tutorials</a> <span style="color: white;">- This video by Julfi Tutorials gave me a great overview of how to interact with a mySQL database using JQuery and PHP using mysqli.</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- F O O T E R  -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="copyright">&copy; 2016 Kaitlin Kidd</p>
+                </div>
+                <div class="col-md-6 social">
+                    <a href="https://www.facebook.com/kaitlinannekidd" target="_blank">
+                        <i class="fa fa-facebook-square fa-2x social-icons"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kiddography/?hl=en" target="_blank">
+                        <i class="fa fa-instagram fa-2x social-icons"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kaitlinannekidd" target="_blank">
+                        <i class="fa fa-linkedin fa-2x social-icons"></i>
+                    </a>
+                    <a href="https://github.com/kkiddography" target="_blank">
+                        <i class="fa fa-github fa-2x social-icons"></i>
+                    </a>
+                    <a href="https://bitbucket.org/kkannekidd/" target="_blank">
+                        <i class="fa fa-bitbucket fa-2x social-icons"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- A C C O R D I A N -->
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].onclick = function() {
+                this.classList.toggle("active");
+                this.nextElementSibling.classList.toggle("show");
+            }
+        }
+    </script>
+
+    <!-- B O O T S T R A P      J S -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
