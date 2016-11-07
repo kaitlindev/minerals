@@ -9,8 +9,8 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 ## **SOURCES** ##
 
 ### HTML/CSS: ###
-* [Bootstrap](http://getbootstrap.com/) - 3.3.7 
-* [Fixed Top Navbar Example for Bootstrap](https://getbootstrap.com/examples/navbar-fixed-top/) - Bootstrap 
+* [Bootstrap](http://getbootstrap.com/) - 3.3.7
+* [Fixed Top Navbar Example for Bootstrap](https://getbootstrap.com/examples/navbar-fixed-top/) - Bootstrap
 * [Font Awesome Icons](http://fontawesome.io/icons/) - 4.6.3 © Dave Gandy
 * [Glyphicons](http://glyphicons.com/) - © Jan Kovarik
 * [Default Sizes for Twitter Bootstrap’s Media Queries](https://scotch.io/tutorials/default-sizes-for-twitter-bootstraps-media-queries) - © Mar 04, 2014, Nicholas Cerminara (Scotch.io).
@@ -19,7 +19,7 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 
 ### JavaScript/JQuery: ###
 * [JQuery](https://jquery.com/) - 2.2.2
-* [JQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) - v1.3 
+* [JQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) - v1.3
 * [JQuery UI](https://jqueryui.com/) - 1.10.4
 * [jQuery Waypoints](https://jqueryui.com/) - 2.0.3 - © 2011-2013 Caleb Troughton
 * [Counter-Up](https://github.com/bfintal/Counter-Up) - © Benjamin Intal
@@ -30,6 +30,7 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 ## **PENDING** ##
 * Add entries to database.
 * Add "Code" section.
-* Add "How are they organized?" section.
-* Convert in-line styles to external. 
+* ~~Add "How are they classified?" section.~~
+* ~~Add "Physical properties" section.~~
+* Convert in-line styles to external.
 * Clean up scripts.
