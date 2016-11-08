@@ -25,15 +25,33 @@ $mineral_mohs= $_POST["mineral_mohs"];
 if ($action == "showroom") {
   $query = "SELECT * FROM minerals";
   $show = mysqli_query($con, $query) or die ("Error");
-  echo "<table border='2px'>
+  echo "<table class='table' border='none'>
     <tr>
-      <td>id</td>
-      <td>name</td>
-      <td>composition</td>
+      <td style='background:#f4f3ee; color: black;'>Name</td>
+      <td style='background:#f4f3ee; color: black;'>Composition</td>
+      <td style='background:#f4f3ee; color: black;'>Group</td>
+      <td style='background:#f4f3ee; color: black;'>Class</td>
+      <td style='background:#f4f3ee; color: black;'>Mohs</td>
+      <td style='background:#f4f3ee; color: black;'>Fracture</td>
+      <td style='background:#f4f3ee; color: black;'>Cleavage</td>
   </tr>";
 
   while($row = mysqli_fetch_array($show)) {
-    echo "<tr><td>" . $row['id'] .   "</td><td>" . $row['name'] . "</td><td>" . $row['composition'] . "</td><td>" . $action . "</td></tr>";
+    echo "<tr><td>"
+    . $row['name'] .
+    "</td><td><p style='padding-left:3px;'>"
+    . $row['composition'] .
+    "</p></td><td><p style='padding-left:3px;'>"
+    . $row['group'] .
+    "</p></td><td><p style='padding-left:3px;'>"
+    . $row['class'] .
+    "</p></td><td><p style='padding-left:3px;'>"
+    . $row['mohs'] .
+    "</p></td><td><p style='padding-left:3px;'>"
+    . $row['fracture'] .
+    "</p></td><td><p style='padding-left:3px;'>"
+    . $row['cleavage'] .
+    "</p></td></tr>";
   }
 
   echo "</table";

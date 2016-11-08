@@ -414,55 +414,9 @@ footer p {
       border-bottom: 1px solid #e7e7e7;
   }
 
-  .starItem {
-    background: #c5d1d9;
-    background-image: -webkit-linear-gradient(top, #c5d1d9, #7b7f82);
-    background-image: -moz-linear-gradient(top, #c5d1d9, #7b7f82);
-    background-image: -ms-linear-gradient(top, #c5d1d9, #7b7f82);
-    background-image: -o-linear-gradient(top, #c5d1d9, #7b7f82);
-    background-image: linear-gradient(to bottom, #c5d1d9, #7b7f82);
-    -webkit-border-radius: 9;
-    -moz-border-radius: 9;
-    border-radius: 9px;
-    font-family: 'Dosis', sans-serif;
-    color: #ffffff;
-    font-size: 13px;
-    padding: 11px 20px 10px 20px;
-    text-decoration: none;
-    width: 200px;
-    float: left;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-#star_results {
-    color: #fff;
-    margin-top: 10px;
-}
-
-#distanceFilterOne {
-  background-color: #4c375b;
-  border-color: #4c375b;
-}
-
-#distanceFilterTwo {
-  background-color: #5d4b6b;
-  border-color: #5d4b6b;
-}
-
-#distanceFilterThree {
-  background-color: #6f5e7b;
-  border-color: #6f5e7b;
-}
-
-
-
-#star_constellation {
-    background-color: #a89eaf;
-    border-color: #a89eaf;
-    color: #fff;
-    width: 100%;
-}
+  .table th, .table td {
+     border-top: none !important;
+ }
 
 /*************************
  * 04. Code
