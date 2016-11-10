@@ -30,8 +30,8 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 ## **PENDING** ##
 * Add entries to database.
 * Add "Code" section.
-* Convert in-line styles to external.
 * Clean up scripts.
-* Streamline id and class names in CSS.
+* ~~Convert in-line styles to external.~~
+* ~~Streamline id and class names in CSS.~~
 * ~~Add "How are they classified?" section.~~
 * ~~Add "Physical properties" section.~~
