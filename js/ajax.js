@@ -2,7 +2,7 @@
 -- SHOW ALL --
 */
 $(document).ready(function() {
-  $("#button").click(function() {
+  $("#selectAllBtn").click(function() {
     function show_all() {
       $.ajax({
         type: "POST",
@@ -41,9 +41,9 @@ $(document).ready(function() {
 -- NAME SEARCH --
 */
 $(document).ready(function() {
-  $("#button3").click(function() {
+  $("#nameSearchBtn").click(function() {
     function search_name() {
-      var name=$("#name").val();
+      var name=$("#nameSearchInput").val();
       $.ajax({
         type: "POST",
         url: "server.php",
@@ -101,7 +101,7 @@ $(document).ready(function() {
 -- CLASS SEARCH --
 */
 $(document).ready(function() {
-  $("#class_btn").click(function() {
+  $("#classSearchBtn").click(function() {
     var classification= $("input[name='class']:checked").val();
     function search_class() {
       $.ajax({
@@ -162,8 +162,8 @@ $(document).ready(function() {
 -- FRACTURE --
 */
 $(document).ready(function() {
-  $( "#fracture_mineral" ).change(function() {
-    var fracture= $("#fracture_mineral").val();
+  $( "#fractureSelect" ).change(function() {
+    var fracture= $("#fractureSelect").val();
     function search_fracture() {
       $.ajax({
         type: "POST",

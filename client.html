@@ -178,7 +178,7 @@
         <h2 class="heading">How are they formed?</h2>
         <hr id="formationHr" />
         <div class="clearfix"></div>
-        <p>Minerals are formed from a variety of geological processes and determine its chemical composition and physical structure.</p>
+        <p style="padding-bottom: 0px;">Minerals are formed from a variety of geological processes and determine its chemical composition and physical structure.</p>
       </div>
     </div>
 
@@ -450,91 +450,92 @@
   <div id="demo">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-            <h2 style="color: #f4f3ee;">Demo</h2>
-            <hr style="width: 70px;" /><br/><br/><br/>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h2 class="heading">Demo</h2>
+          <hr id="demoHr" />
+          <div class="clearfix"></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12">
-            <p style="color: #f4f3ee; font-size: 16px;">Search for minerals based on different criteria.</p>
-            <br />
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <p>Search for minerals based on different criteria.</p>
         </div>
       </div>
-
       <div class="row">
-        <!-- ROW 1 -->
+        <!-- C O L U M N 1 -->
         <div class="col-md-3">
-          <!--******************************************************** -->
-          <!--*******************SELECT ALL *********************** -->
-          <!--******************************************************** -->
-          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 50px; border-radius: 10px; margin-bottom:10px;">
-            <button style="background-color: #484f5e; border-color: #484f5e;" class="btn btn-primary" type="button" id="button">Select All</button>
-          </div>
 
-          <!--******************************************************** -->
-          <!--*******************NAME SEARCH *********************** -->
-          <!--******************************************************** -->
-          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 100px; border-radius: 10px; margin-bottom:10px;">
-              <p style="color: #f4f3ee;"><span class="fa fa-search" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">name</span>.</p>
-              <input class="form-control" style="width: 70%; float: left; margin-right: 5px;" type="text" id="name" />
-              <button class="btn btn-default" style="float: left;" id="button3">Search</button>
-          </div>
+            <!--**************************************************************-->
+            <!--******************* S E L E C T // A L L  ***************** -->
+            <!--************************************************************** -->
+            <div id="selectAllContainer">
+              <button class="btn btn-primary" type="button" id="selectAllBtn">Select All</button>
+            </div>
 
-          <!--******************************************************** -->
-          <!--*******************LETTER SEARCH *********************** -->
-          <!--******************************************************** -->
-          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 260px; border-radius: 10px; margin-bottom:10px;">
-              <p style="color: #f4f3ee;"><span class="fa fa-font" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">letter</span>.</p>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="a" value="A">A</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="b" value="B">B</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="c" value="C">C</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="d" value="D">D</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="e" value="E">E</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="f" value="F">F</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="g" value="G">G</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="h" value="H">H</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="i" value="I">I</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="j" value="J">J</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="k" value="K">K</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="l" value="L">L</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="m" value="M">M</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="n" value="N">N</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="o" value="O">O</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="p" value="P">P</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="q" value="Q">Q</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="r" value="R">R</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="s" value="S">S</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="t" value="T">T</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="u" value="U">U</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="v" value="V">V</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="w" value="W">W</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="x" value="X">X</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="y" value="Y">Y</button>
-              <button style="margin-bottom:10px;" class="letter btn btn-outline-primary" id="z" value="Z">Z</button>
+            <!--*******************************************************************-->
+            <!--******************* N A M E // S E A R C H  ****************** -->
+            <!--******************************************************************* -->
+            <div id="nameSearchContainer">
+              <p style="padding-bottom: 0px;"><span class="fa fa-search" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">name</span>.</p>
+              <input class="form-control" type="text" id="nameSearchInput" />
+              <button class="btn btn-default" id="nameSearchBtn">Search</button>
+            </div>
+
+            <!--**********************************************************************-->
+            <!--******************* L E T T E R // S E A R C H  ****************** -->
+            <!--********************************************************************** -->
+            <div id="letterSearchContainer">
+              <p style="padding-bottom: 0px;"><span class="fa fa-font" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">letter</span>.</p>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="a" value="A">A</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="b" value="B">B</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="c" value="C">C</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="d" value="D">D</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="e" value="E">E</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="f" value="F">F</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="g" value="G">G</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="h" value="H">H</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="i" value="I">I</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="j" value="J">J</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="k" value="K">K</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="l" value="L">L</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="m" value="M">M</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="n" value="N">N</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="o" value="O">O</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="p" value="P">P</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="q" value="Q">Q</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="r" value="R">R</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="s" value="S">S</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="t" value="T">T</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="u" value="U">U</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="v" value="V">V</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="w" value="W">W</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="x" value="X">X</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="y" value="Y">Y</button>
+              <button class="letter btn btn-outline-primary letter-search-btn" id="z" value="Z">Z</button>
               <br/>
+            </div>
+
+            <!--***********************************************************************************-->
+            <!--******************* C O M P O S I T I O N // S E A R C H  ****************** -->
+            <!--*********************************************************************************** -->
+            <div id="compositionSearchContainer">
+                <p style="padding-bottom:0px;"><span class="fa fa-flask" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">composition</span>.</p>
+                <button class="composition btn btn-outline-primary composition-search-btn" id="mg" value="Mg">Mg</button>
+                <button class="composition btn btn-outline-primary composition-search-btn" id="si" value="Si">Si</button>
+                <br/>
+            </div>
           </div>
 
-          <!--******************************************************** -->
-          <!--*******************COMPOSITION SEARCH *********************** -->
-          <!--******************************************************** -->
-          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 200px; border-radius: 10px; margin-bottom:10px;">
-              <p style="color: #f4f3ee;"><span class="fa fa-flask" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">composition</span>.</p>
-              <button style="margin-bottom:10px;" class="composition btn btn-outline-primary" id="mg" value="Mg">Mg</button>
-              <button style="margin-bottom:10px;" class="composition btn btn-outline-primary" id="si" value="Si">Si</button>
-              <br/>
-          </div>
-        </div>
-
-        <!-- ROW 2 -->
+        <!-- C O L U M N 2 -->
         <div class="col-md-4">
-          <!--******************************************************** -->
-          <!--*******************CLASS SEARCH *********************** -->
-          <!--******************************************************** -->
-          <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 250px; border-radius: 10px; margin-bottom:10px;">
-              <p style="color: #f4f3ee;"><span class="fa fa-object-group" aria-hidden="true"></span> | Search by <span style="color:#d9ba9d;">class</span>.</p>
-            <div style="float:left; padding-right:8px;">
-              <p>SILICATES</p>
+
+          <!--*********************************************************************-->
+          <!--******************* C L A S S  // S E A R C H  ****************** -->
+          <!--********************************************************************* -->
+          <div id="classSearchContainer">
+            <p style="padding-bottom: 0px;"><span class="fa fa-object-group" aria-hidden="true"></span> | Search by <span style="color:#d9ba9d;">class</span>.</p>
+            <div class="split">
+              <p style="padding-bottom: 0px;">SILICATES</p>
               <input class="class" type="radio" id="Cyclosilicate" value="Cyclosilicate" name="class"> <label>Cyclosilicate</label>
               <br />
               <input class="class" type="radio" id="Inosilicate" value="Inosilicate" name="class"> <label>Inosilicate</label>
@@ -547,8 +548,8 @@
               <br />
               <input class="class" type="radio" id="Tectosilicate" value="Tectosilicate" name="class"> <label>Tectosilicate</label>
             </div>
-            <div style="float:left;padding-right:8px;">
-              <p>NON-SILICATES </p>
+            <div class="split">
+              <p style="padding-bottom: 0px;">NON-SILICATES </p>
               <input class="class" type="radio" id="Carbonate" value="Carbonate" name="class"> <label>Carbonate</label>
               <br />
               <input class="class" type="radio" id="Halide" value="Halide" name="class">
@@ -566,75 +567,74 @@
               <input class="class" type="radio" id="Phosphate" value="Phosphate" name="class">
               <label>Phosphate</label>
             </div>
-            <div style="float:left;padding-right:8px;">
+            <div class="split">
               <input class="class" type="radio" id="Sulfate" value="Sulfate" name="class">
               <label>Sulfate</label>
               <br />
               <input class="class" type="radio" id="Sulfide" value="Sulfide" name="class">
               <label>Sulfide</label>
               <br />
-              <button class="btn btn-default" id="class_btn">Search</button>
+              <button class="btn btn-default" id="classSearchBtn">Search</button>
             </div>
-              <br/>
+            <br/>
           </div>
 
-            <!--******************************************************** -->
-            <!--*******************COLOR SEARCH *********************** -->
-            <!--******************************************************** -->
-            <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 200px; border-radius: 10px; margin-bottom:10px;">
-                <p style="color: #f4f3ee;"><span class="fa fa-eyedropper" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">color</span>.</p>
-                <button title="red" class="color btn btn-outline-primary masterTooltip" style="background-color: #ff4c4c; width: 40px; height: 40px; margin-bottom:10px;" id="red" value="red"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #ffb732; width: 40px; height: 40px; margin-bottom: 10px;" id="orange" value="orange"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #ffff7f; width: 40px; height: 40px; margin-bottom: 10px;" id="yellow" value="yellow"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #99cc99; width: 40px; height: 40px; margin-bottom: 10px;" id="green" value="green"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #6666ff; width: 40px; height: 40px; margin-bottom: 10px;" id="blue" value="blue"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #b266b2; width: 40px; height: 40px; margin-bottom: 10px;" id="purple" value="purple"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #ffd9df; width: 40px; height: 40px; margin-bottom: 10px;" id="pink" value="pink"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #e5e5e5; width: 40px; height: 40px; margin-bottom: 10px;" id="white" value="white"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #c6af7c; width: 40px; height: 40px; margin-bottom: 10px;" id="brown" value="brown"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #b2b2b2; width: 40px; height: 40px; margin-bottom: 10px;" id="grey" value="grey"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #191919; width: 40px; height: 40px; margin-bottom: 10px;" id="black" value="black"></button>
-                <button class="color btn btn-outline-primary" style="background-color: transparent; width: 40px; height: 40px; border: 1px solid black; margin-bottom: 10px;" id="colorless" value="colorless"></button>
-                <button class="color btn btn-outline-primary" style="background-color: #b20000; width: 40px; height: 40px; margin-bottom: 10px;" id="multiple" value="multiple"></button>
-                <br/>
-                </br/>
-            </div>
-
-            <!--******************************************************** -->
-            <!--*******************FRACTURE SEARCH *********************** -->
-            <!--******************************************************** -->
-            <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 80px; border-radius: 10px; margin-bottom:10px;">
-                <p style="color: #f4f3ee;"><span class="fa fa-industry" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">fracture</span>.</p>
-                <select id="fracture_mineral" style="width: 100%;" class="fracture_mineral" onChange="search_fracture();">
-                 <option value="" name="" class="">-- Select --</option>
-                 <option value="conchoidal" name="fracture" class="fracture">conchoidal</option>
-                 <option value="micaceous" name="fracture" class="fracture">micaceous</option>
-               </select>
-                <br/>
-                </br/>
-            </div>
-
-            <!--******************************************************** -->
-            <!--*******************MOHS SEARCH *********************** -->
-            <!--******************************************************** -->
-            <div style="background-color:  #939397; padding: 10px 10px 10px 10px; height: 120px; border-radius: 10px; margin-bottom:10px;">
-                <p style="color: #f4f3ee;"><span class="fa fa-area-chart" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">mohs</span>.</p>
-                <div id="slider" style="width: 332px; margin-left:5px; margin-bottom:5px;"> </div>
-                <input class="form-control" id="amount" type="text" readonly/>
-                <br/>
-            </div>
+          <!--*********************************************************************-->
+          <!--******************* C O L O R  // S E A R C H  ****************** -->
+          <!--********************************************************************* -->
+          <div id="colorSearchContainer">
+            <p style="padding-bottom: 0px;"><span class="fa fa-eyedropper" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">color</span>.</p>
+            <button title="red" class="color btn btn-outline-primary masterTooltip" style="background-color: #ff4c4c; width: 40px; height: 40px; margin-bottom:10px;" id="red" value="red"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #ffb732; width: 40px; height: 40px; margin-bottom: 10px;" id="orange" value="orange"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #ffff7f; width: 40px; height: 40px; margin-bottom: 10px;" id="yellow" value="yellow"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #99cc99; width: 40px; height: 40px; margin-bottom: 10px;" id="green" value="green"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #6666ff; width: 40px; height: 40px; margin-bottom: 10px;" id="blue" value="blue"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #b266b2; width: 40px; height: 40px; margin-bottom: 10px;" id="purple" value="purple"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #ffd9df; width: 40px; height: 40px; margin-bottom: 10px;" id="pink" value="pink"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #e5e5e5; width: 40px; height: 40px; margin-bottom: 10px;" id="white" value="white"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #c6af7c; width: 40px; height: 40px; margin-bottom: 10px;" id="brown" value="brown"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #b2b2b2; width: 40px; height: 40px; margin-bottom: 10px;" id="grey" value="grey"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #191919; width: 40px; height: 40px; margin-bottom: 10px;" id="black" value="black"></button>
+            <button class="color btn btn-outline-primary" style="background-color: transparent; width: 40px; height: 40px; border: 1px solid black; margin-bottom: 10px;" id="colorless" value="colorless"></button>
+            <button class="color btn btn-outline-primary" style="background-color: #b20000; width: 40px; height: 40px; margin-bottom: 10px;" id="multiple" value="multiple"></button>
+            <br/>
+            </br/>
           </div>
 
+          <!--***************************************************************************-->
+          <!--******************* F R A C T U R E  // S E A R C H  ***************** -->
+          <!--*************************************************************************** -->
+          <div id="fractureSearchContainer">
+            <p style="padding-bottom: 0px;"><span class="fa fa-industry" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">fracture</span>.</p>
+            <select id="fractureSelect" class="fractureSelect" onChange="search_fracture();">
+             <option value="" name="" class="">-- Select --</option>
+             <option value="conchoidal" name="fracture" class="fracture">conchoidal</option>
+             <option value="micaceous" name="fracture" class="fracture">micaceous</option>
+           </select>
+            <br/>
+            <br/>
+          </div>
 
-
-                <div class="col-md-5">
-                  <h4 style="color: #f4f3ee; text-align:center;">RESULTS</h2>
-                  <hr style="width: 100%;" /><br/><br/><br/>
-                    <div id="content" style="overflow-y: scroll; height: 550px;"></div>
-                </div>
-            </div>
+          <!--*******************************************************************-->
+          <!--******************* M O H S  // S E A R C H  ***************** -->
+          <!--*******************************************************************-->
+          <div id="mohsSearchContainer">
+            <p style="padding-bottom:0px;"><span class="fa fa-area-chart" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">mohs</span>.</p>
+            <div id="slider"></div>
+            <input class="form-control" id="amount" type="text" readonly/>
+            <br/>
+          </div>
         </div>
+
+        <!-- C O L U M N 3 -->
+        <div class="col-md-5">
+          <div id="resultsContainer">
+            <div id="content"></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
   <!-- C O D E -->
   <div id="code">
@@ -1037,93 +1037,100 @@
     </div>
 
   <!-- S O U R C E S -->
-<div id="sources">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h2 style="color: #f4f3ee;">Sources</h2>
-                    <hr style="width: 90px;" /><br/><br/><br/>
+  <div id="sources">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h2 class="heading">Sources</h2>
+          <hr id="sourcesHr" />
+          <div class="clearfix"></div>
 
-                    <!-- Mineral Data -->
-                    <h4>Mineral Data</h4>
-                    <ul class="sources-list">
-                      <li>
-                          <a class="link-sources" href="http://www.sandatlas.org/composition-of-the-earths-crust/" target="_blank">Composition of the crust</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.sandatlas.org/about-2/" target="_blank">© Siim Sepp</a> <span style="color: white;"> - Statistics about the composition of the Earth. </span>
-                        </li>
-                        <li>
-                          <a class="link-sources" href="http://www.universetoday.com/111586/how-life-could-have-caused-most-minerals-on-earth/" target="_blank">How Life Could Have Produced Most Minerals On Earth</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.universetoday.com/author/pars3c/" target="_blank">Elizabeth Howell (© Universe Today, December 23, 2015)</a> <span style="color: white;"> - In-depth article about how minerals were produced on Earth. </span>
-                        </li>
-                        <li>
-                          <a class="link-sources" href="http://www.geosci.ipfw.edu/PhysSys/Unit_3/minerals.html" target="_blank">Minerals</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.geosci.ipfw.edu/PhysSys/cover.html" target="_blank">Carl N. Drummond Ph.D. (© Physical Systems - Exploring the Earth's Dynamics, 2001)</a> <span style="color: white;"> - Supplementary material about mineral classes.</span>
-                        </li>
-                        <li>
-                          <a class="link-sources" href="http://www.nhm.org/site/research-collections/mineral-sciences/faqs" target="_blank">Mineral Sciences FAQs </a> <span style="color: white;">by </span><a class="link-sources" href="https://www.nhm.org/site/" target="_blank">© The Natural History Museum of Los Angeles County</a> <span style="color: white;"> - Great overview of mineral information. </span>
-                        </li>
-                        <li>
-                          <a class="link-sources" href="http://www.johnbetts-fineminerals.com/jhbnyc/referenc.htm" target="_blank">Mineral Species Quick Reference Guide</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.johnbetts-fineminerals.com/index.htm"
-                          target="_blank">© John H. Betts</a> <span style="color: white;"> - Thorough list of 900 minerals and their composition, class, subclass and type locality.  </span>
-                        </li>
-                        <li>
-                          <a class="link-sources" href="http://www.rocksinmyheadtoo.com/Groups.htm" target="_blank">Scientific Classifications of Mineral Groups</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.rocksinmyheadtoo.com/index.html"
-                          target="_blank">© RocksInMyHeadToo</a> <span style="color: white;"> - Detailed data about mineral classes.</span>
-                        </li>
-                        <li>
-                          <a class="link-sources" href="http://www.galleries.com/minerals/property/fracture.htm" target="_blank">What is fracture?</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.galleries.com/default.htm"
-                          target="_blank">© Amethyst Galleries, Inc. (1995 - 2014)</a> <span style="color: white;"> - Definition of fracture found within mineralogy.</span>
-                        </li>
-                        <li>
-                          <a class="link-sources" href="https://en.wikipedia.org/wiki/List_of_minerals" target="_blank">© Wikipedia</a> <span style="color: white;">- Additional data about mineral properties, including fracture, mohs value, and class.</span>
-                        </li>
-                        <li>
-                          <a class="link-sources" href="http://www.gold-traders.co.uk/gold-information/40-common-minerals.html" target="_blank">40 common minerals &amp; their uses</a> <span style="color: white;">by </span><a class="link-sources" href="http://www.gold-traders.co.uk/" target="_blank">© Gold Traders (UK)</a> <span style="color: white;"> - Information about common minerals found in the world.</span>
-                        </li>
-                    </ul>
+          <!-- M I N E R A L // D A T A -->
+          <h4>Mineral Data</h4>
+          <ul class="sources-list">
+            <li>
+                <a class="link-sources" href="http://www.sandatlas.org/composition-of-the-earths-crust/" target="_blank">Composition of the crust</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.sandatlas.org/about-2/" target="_blank">© Siim Sepp</a> <span style="color: #f4f3ee;"> - Statistics about the composition of the Earth. </span>
+            </li>
+            <li>
+              <a class="link-sources" href="http://www.universetoday.com/111586/how-life-could-have-caused-most-minerals-on-earth/" target="_blank">How Life Could Have Produced Most Minerals On Earth</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.universetoday.com/author/pars3c/" target="_blank">Elizabeth Howell (© Universe Today, December 23, 2015)</a> <span style="color: #f4f3ee;"> - In-depth article about how minerals were produced on Earth. </span>
+            </li>
+            <li>
+              <a class="link-sources" href="http://www.geosci.ipfw.edu/PhysSys/Unit_3/minerals.html" target="_blank">Minerals</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.geosci.ipfw.edu/PhysSys/cover.html" target="_blank">Carl N. Drummond Ph.D. (© Physical Systems - Exploring the Earth's Dynamics, 2001)</a> <span style="color: #f4f3ee;"> - Supplementary material about mineral classes.</span>
+            </li>
+            <li>
+              <a class="link-sources" href="http://www.nhm.org/site/research-collections/mineral-sciences/faqs" target="_blank">Mineral Sciences FAQs </a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="https://www.nhm.org/site/" target="_blank">© The Natural History Museum of Los Angeles County</a> <span style="color: #f4f3ee;"> - Great overview of mineral information. </span>
+            </li>
+            <li>
+              <a class="link-sources" href="http://www.johnbetts-fineminerals.com/jhbnyc/referenc.htm" target="_blank">Mineral Species Quick Reference Guide</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.johnbetts-fineminerals.com/index.htm"
+              target="_blank">© John H. Betts</a> <span style="color: #f4f3ee;"> - Thorough list of 900 minerals and their composition, class, subclass and type locality.  </span>
+            </li>
+            <li>
+              <a class="link-sources" href="http://www.rocksinmyheadtoo.com/Groups.htm" target="_blank">Scientific Classifications of Mineral Groups</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.rocksinmyheadtoo.com/index.html"
+              target="_blank">© RocksInMyHeadToo</a> <span style="color: #f4f3ee;"> - Detailed data about mineral classes.</span>
+            </li>
+            <li>
+              <a class="link-sources" href="http://www.galleries.com/minerals/property/fracture.htm" target="_blank">What is fracture?</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.galleries.com/default.htm"
+              target="_blank">© Amethyst Galleries, Inc. (1995 - 2014)</a> <span style="color: #f4f3ee;"> - Definition of fracture found within mineralogy.</span>
+            </li>
+            <li>
+              <a class="link-sources" href="https://en.wikipedia.org/wiki/List_of_minerals" target="_blank">© Wikipedia</a> <span style="color: #f4f3ee;">- Additional data about mineral properties, including fracture, mohs value, and class.</span>
+            </li>
+            <li>
+              <a class="link-sources" href="http://www.gold-traders.co.uk/gold-information/40-common-minerals.html" target="_blank">40 common minerals &amp; their uses</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.gold-traders.co.uk/" target="_blank">© Gold Traders (UK)</a> <span style="color: #f4f3ee;"> - Information about common minerals found in the world.</span>
+            </li>
+          </ul>
 
-                    <!-- Icons -->
-                    <h4>Icons</h4>
-                    <ul class="sources-list">
-                        <li><a class="link-sources" href="http://www.flaticon.com/" target="_blank">FlatIcon</a> <span style="color: white;">- Free vector icons available for use.</span></li>
-                    </ul>
+          <!-- I C O N S -->
+          <h4>Icons</h4>
+          <ul class="sources-list">
+            <li>
+              <a class="link-sources" href="http://www.flaticon.com/" target="_blank">FlatIcon</a> <span style="color: #f4f3ee;">- Free vector icons available for use.</span>
+            </li>
+          </ul>
 
-                    <!-- Code -->
-                    <h4>Code</h4>
-                    <ul class="sources-list">
-                        <li><a class="link-sources" href="http://www.w3schools.com/howto/howto_js_accordion.asp" target="_blank">Accordion</a> <span style="color: white;">- Collapsible accordion featured on w3schools.com</span></li>
-                        <li><a class="link-sources" href="https://github.com/bfintal/Counter-Up" target="_blank">Counter-Up</a> <span style="color: white;">- A lightweight jQuery plugin that counts up to a targeted number when the number becomes visible by <a class="link-sources" href="https://github.com/bfintal" target="_blank">Benjamin Intal</a>. </span></li>
-                    </ul>
+          <!-- C O D E  -->
+          <h4>Code</h4>
+          <ul class="sources-list">
+            <li>
+              <a class="link-sources" href="http://www.w3schools.com/howto/howto_js_accordion.asp" target="_blank">Accordion</a> <span style="color: #f4f3ee;">- Collapsible accordion featured on w3schools.com</span>
+            </li>
+            <li>
+              <a class="link-sources" href="https://github.com/bfintal/Counter-Up" target="_blank">Counter-Up</a> <span style="color: #f4f3ee;">- A lightweight jQuery plugin that counts up to a targeted number when the number becomes visible by <a class="link-sources" href="https://github.com/bfintal" target="_blank">Benjamin Intal</a>. </span>
+            </li>
+          </ul>
 
-                    <!-- Inspiration -->
-                    <h4>Inspiration</h4>
-                    <ul class="sources-list">
-                        <li><a class="link-sources" href="https://www.youtube.com/watch?v=a-uu3LTT-Lc" target="_blank">JQuery Ajax PHP Tutorial</a> <span style="color: white;">YouTube video by </span> <a class="link-sources" href="https://www.youtube.com/channel/UC3D3EFR1H6H18OiGis7-HNw"
-                                target="_blank">Julfi Tutorials</a> <span style="color: white;">- This video by Julfi Tutorials gave me a great overview of how to interact with a mySQL database using JQuery and PHP using mysqli.</span></li>
-                    </ul>
-                </div>
-
-            </div>
+          <!-- I N S P I R A T I O N  -->
+          <h4>Inspiration</h4>
+          <ul class="sources-list">
+            <li>
+              <a class="link-sources" href="https://www.youtube.com/watch?v=a-uu3LTT-Lc" target="_blank">JQuery Ajax PHP Tutorial</a> <span style="color: #f4f3ee;">YouTube video by </span> <a class="link-sources" href="https://www.youtube.com/channel/UC3D3EFR1H6H18OiGis7-HNw" target="_blank">Julfi Tutorials</a> <span style="color: #f4f3ee;">- This video by Julfi Tutorials gave me a great overview of how to interact with a mySQL database using JQuery and PHP using mysqli.</span>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 
   <!-- F O O T E R  -->
   <footer id="contact">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-6">
-                  <p class="copyright">&copy; 2016 Kaitlin Kidd</p>
-              </div>
-              <div class="col-md-6 social">
-                  <a href="https://www.linkedin.com/in/kaitlinannekidd" target="_blank">
-                      <i class="fa fa-linkedin fa-2x social-icons"></i>
-                  </a>
-                  <a href="https://github.com/kkiddography" target="_blank">
-                      <i class="fa fa-github fa-2x social-icons"></i>
-                  </a>
-                  <a href="https://bitbucket.org/kkannekidd/" target="_blank">
-                      <i class="fa fa-bitbucket fa-2x social-icons"></i>
-                  </a>
-              </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="copyright">&copy; 2016 Kaitlin Kidd</p>
+        </div>
+        <div class="col-md-6 social">
+          <a href="https://www.linkedin.com/in/kaitlinannekidd" target="_blank">
+              <i class="fa fa-linkedin fa-2x social-icons"></i>
+          </a>
+          <a href="https://github.com/kkiddography" target="_blank">
+              <i class="fa fa-github fa-2x social-icons"></i>
+          </a>
+          <a href="https://bitbucket.org/kkannekidd/" target="_blank">
+              <i class="fa fa-bitbucket fa-2x social-icons"></i>
+          </a>
+        </div>
       </div>
+    </div>
   </footer>
 
     <!-- A C C O R D I A N -->
@@ -1141,5 +1148,4 @@
     <!-- B O O T S T R A P      J S -->
     <script src="js/bootstrap.min.js"></script>
 </body>
-
 </html>
