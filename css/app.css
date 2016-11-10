@@ -3,19 +3,25 @@
  * APP.CSS
  * ==================================================================================================
  * Author: Kaitlin Kidd
- * Date: 09.29.16
+ * Date: 11.10.16
  * Version: 0.0.1
  * Purpose: Main styles for app.
  * Notes:
  * --- W3C CSS Validation: http://jigsaw.w3.org/css-validator/#validate_by_uri
  * --- Accordion styles: http://www.w3schools.com/howto/howto_js_accordion.asp
  * --- Fixed Top Navbar Example for Bootstrap - https://getbootstrap.com/examples/navbar-fixed-top/
+ * Syntax:
+ * --- Classes:
+        .class-name
+* --- IDs:
+        #idName
  * --------------------------------------------------------------------------------------------------
  * Revision History
  * --------------------------------------------------------------------------------------------------
  * Date          Revision Description                                                     Modified By
  * --------------------------------------------------------------------------------------------------
  * 09.29.2016 - Created Original Document                                          KAK
+ * 11.10.2016 - Converting inline styles to external                              KAK
  * ==================================================================================================
  *
  * - Contents -
@@ -26,9 +32,9 @@
  * 04. Demo
  * 05. Code
  * 06. Sources
+ * 07. Footer
  *
  */
-
  /*************************
  * 00. Defaults
  *************************/
@@ -40,10 +46,6 @@
 body, h1, h2, h3, h4, h5 {
     font-family: 'Jaldi', sans-serif;
     font-weight: 800;
-}
-
-h1 {
-
 }
 
 h2 {
@@ -71,6 +73,12 @@ hr {
     border-top: 3px solid #e7e7e7;
 }
 
+p {
+  color: #f4f3ee;
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
 .hr-divider {
     display: block;
     margin-top: 2.5em;
@@ -81,19 +89,6 @@ hr {
     border-width: 1px;
     text-align: center;
     width: 100%;
-}
-
-.heading {
-    text-transform: uppercase;
-    text-align: left;
-    color: #e5e5e5;
-}
-
-.subheading {
-    color: #8e8e8e;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 14px;
 }
 
 .link:link {
@@ -152,34 +147,11 @@ a:active {
     text-decoration: none;
 }
 
-
-footer a {
-    color: #f4f3ee;
+.heading {
+  color: #f4f3ee;
+  padding-top: 30px;
 }
 
-footer {
-    background-color: #b68964;
-    padding: 40px 0 30px;
-}
-
-footer p {
-    color: #f4f3ee;
-}
-
-.copyright {
-    text-align: left;
-    color: #f4f3ee;
-    font-size: 15px;
-}
-
-.social {
-    text-align: right;
-}
-
-.social-icons {
-    color: #d9ba9d;
-    margin-right: 20px;
-}
 /*************************
  * 01. Nav
  *************************/
@@ -233,18 +205,18 @@ footer p {
      background-size: cover;
   }
 
- #hero-heading {
+ #heroHeading {
      position: relative;
      padding-top: 20%;
      padding-bottom: 19%;
  }
 
-  #hero-heading > h1 {
+  #heroHeading > h1 {
      margin: 0;
      font-size: 6em;
  }
 
-#hero-hr {
+#heroHr {
      width: 380px;
      border-top: 1px solid #f8f8f8;
      border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -272,6 +244,10 @@ footer p {
    background: rgba(255, 255, 255, 0.1);
  }
 
+ #spacer {
+   padding-top:30px;
+ }
+
  /*************************
   * 03.1 Intro > Definition
   *************************/
@@ -283,39 +259,84 @@ footer p {
       border-bottom: 1px solid #e7e7e7;
   }
 
-  .counterDiv {
-    border-radius: 25px;
-    background: #707682;
-    padding: 20px;
-    width: 260px;
+  #definitionHr {
+    width: 220px;
+    padding-bottom: 20px;
   }
 
   .wrapper {
     clear:both;
 }
-.first {
+
+.first-blurb {
     float:left;
     padding-right: 20px;
     padding-left: 120px;
     padding-bottom: 20px;
 }
 
-.first-categories {
-    float:left;
-    padding-right: 20px;
-    padding-bottom: 20px;
-}
-.second {
-    float:left;
-    padding-right: 20px;
-}
-.third {
+.second-blurb {
     float:left;
     padding-right: 20px;
 }
 
-.fourth {
+.third-blurb {
     float:left;
+    padding-right: 20px;
+}
+
+.definition-blurb {
+  border-radius: 25px;
+  background: #707682;
+  padding: 20px;
+  width: 260px;
+}
+
+.counter {
+  color: #d9ba9d;
+  font-size: 50px;
+}
+
+#definitionMinerals {
+  width: 100px;
+  height: 100px;
+  margin-left:10px;
+}
+
+#blurbMinerals {
+  color: #343c4d;
+  text-align: center;
+  font-size: 15px;
+}
+
+#definitionPlanet {
+  margin-left:10px;
+  width: 90px;
+  height: 90px;
+}
+
+#blurbPlanet {
+  color: #343c4d;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+#definitionChemicals {
+  width: 90px;
+  height: 90px;
+  margin-left:10px;
+}
+
+#blurbChemicals {
+  color: #343c4d;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+#definitionSpacer {
+  padding-bottom: 230px;
 }
 
 /*************************
@@ -329,12 +350,32 @@ footer p {
      border-bottom: 1px solid #e7e7e7;
  }
 
- .counterDivTwo {
+ #formationHr {
+   width: 255px;
+   padding-bottom: 20px;
+ }
+
+ .formation-text {
+   color: #f4f3ee;
+   padding-top:10px;
+   font-size: 16px;
+ }
+
+ .formation-blurb {
      border-radius: 25px;
      background: #7e838e;
      height: 130px;
      width: 160px;
  }
+
+ #formationHeat {
+   width: 100px;
+   height: 100px;
+   margin-left: 30px;
+   margin-top: 15px;
+ }
+
+ 
 
  /*************************
   * 03.1 Intro > Classification
@@ -547,4 +588,36 @@ div.panel.show {
 
 .sources-list {
     color: #f4f3ee;
+}
+
+
+/*************************
+ * 06. Footer
+ *************************/
+footer a {
+    color: #f4f3ee;
+}
+
+footer {
+    background-color: #b68964;
+    padding: 40px 0 30px;
+}
+
+footer p {
+    color: #f4f3ee;
+}
+
+.copyright {
+    text-align: left;
+    color: #f4f3ee;
+    font-size: 15px;
+}
+
+.social {
+    text-align: right;
+}
+
+.social-icons {
+    color: #d9ba9d;
+    margin-right: 20px;
 }

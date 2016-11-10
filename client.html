@@ -114,16 +114,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div id="hero-heading">
+                <div id="heroHeading">
                   <h1>(Mi)nerals<sub>2</sub></h1>
                   <h3>interaction with mysql db with php &amp; ajax</h3>
-                  <hr id="hero-hr">
-                  <h5>database of common minerals found on earth</h5>
+                  <hr id="heroHr">
+                  <h5>database of minerals found on earth</h5>
                   <a href="#definition" class="btn scroller page-scroll">
                       <i id="arrow" class="fa fa-diamond animated"></i>
                   </a>
                 </div>
-                <div style="padding-top:30px;"></div>
+                <div id="spacer"></div>
               </div>
           </div>
       </div>
@@ -134,43 +134,37 @@
     <div class="container">
       <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <br />
-            <h2 style="color: #f4f3ee;">What are minerals?</h2>
-            <hr style="width: 220px;" /><br/><br/><br/>
-            <p style="color: #f4f3ee; font-size: 16px;">
-                Minerals are solid, inorganic and naturally occurring chemical compounds with definite internal structure. They are unable to exist as liquids or gases at standard room temperatures and pressures. Any substances created by a living organism (for example: amber and coral) do not classify as a mineral. All atoms within a mineral are arranged systematically, forming specific shapes and sizes. The Earth’s crust holds many different minerals with varying chemical compositions including silicon and oxygen. A few minerals have unique properties, such as being radioactive, magnetic or luminescent. Minerals should not be confused with rocks, which are either aggregates of several different minerals or contain no minerals without a distinct composition. Gemstones used for jewelry are cut and polished minerals. </p>
-            <br />
+            <h2 class="heading">What are minerals?</h2>
+            <hr id="definitionHr" />
+            <div class="clearfix"></div>
+            <p>Minerals are solid, inorganic and naturally occurring chemical compounds with definite internal structure. They are unable to exist as liquids or gases at standard room temperatures and pressures. Any substances created by a living organism (for example: amber and coral) do not classify as a mineral. All atoms within a mineral are arranged systematically, forming specific shapes and sizes. The Earth’s crust holds many different minerals with varying chemical compositions including silicon and oxygen. A few minerals have unique properties, such as being radioactive, magnetic or luminescent. Minerals should not be confused with rocks, which are either aggregates of several different minerals or contain no minerals without a distinct composition. Gemstones used for jewelry are cut and polished minerals. </p>
             <div class="wrapper">
-                <div class="first">
-                    <div class="counterDiv">
-                        <span class="counter" style="color: #d9ba9d; font-size: 50px;">5,300</span>
-                        <img src="img/minerals.png" width="100" height="100" style="margin-left:10px;" />
-                        <p style="color: #343c4d; text-align: center;">known species of minerals</p>
+                <div class="first-blurb">
+                    <div class="definition-blurb">
+                        <span class="counter">5,300</span>
+                        <img id="definitionMinerals" src="img/minerals.png" />
+                        <p id="blurbMinerals">known species of minerals</p>
                     </div>
                 </div>
-                <div class="second">
-                    <div class="counterDiv">
-                        <span class="counter" style="color: #d9ba9d; font-size: 50px;">4.56</span>
-                        <img src="img/planet.png" width="90" height="90" style="margin-left:10px;" />
-                        <p style="color: #343c4d; text-align: center; padding-top: 10px;">billion years ago minerals first formed</p>
+                <div class="second-blurb">
+                    <div class="definition-blurb">
+                        <span class="counter">4.56</span>
+                        <img id="definitionPlanet" src="img/planet.png" />
+                        <p id="blurbPlanet">billion years ago minerals first formed</p>
                     </div>
                 </div>
-                <div class="third">
-                    <div class="counterDiv">
-                        <span class="counter" style="color: #d9ba9d; font-size: 50px;">90</span>%
-                        <img src="img/chemicals.png" width="90" height="90" style="margin-left:10px;" />
-                        <p style="color: #343c4d; text-align: center; padding-top: 10px;">of earth's crust composed of minerals</p>
+                <div class="third-blurb">
+                    <div class="definition-blurb">
+                        <span class="counter">90</span>%
+                        <img id="definitionChemicals" src="img/chemicals.png" />
+                        <p id="blurbChemicals">of earth's crust composed of minerals</p>
                     </div>
                 </div>
             </div>
-            <br /> <br /> <br /> <br /> <br /><br /> <br /> <br /><br />
+            <div id="definitionSpacer"></div>
             <script href="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-            <br/>
-            <p style="color: #f4f3ee; font-size: 16px;">
-                Common elements found within minerals are oxygen (O), silicon (Si), aluminum (Al), iron (Fe), calcium (Ca), sodium (Na), potassium (K), and magnesium (Mg). Every mineral contains a distinctive arrangement of elements which determines its type and to which class it belongs to. The composition of these elements can determine its crystalline structure and physical properties. Oftentimes, different minerals can contain the same chemical composition, yet have contrasting physical traits. For example, both diamond and graphite are composed of pure carbon (C). Despite this, the carbon atoms within diamonds form a three dimensional lattice while the carbon atoms within graphite form a two dimensional network. Because of this, graphite is soft, dull and opaque while diamonds are transparent, rare, and form the hardest natural substance in the world.
-            </p>
-            <br/><br/>
+            <p>Common elements found within minerals are oxygen (O), silicon (Si), aluminum (Al), iron (Fe), calcium (Ca), sodium (Na), potassium (K), and magnesium (Mg). Every mineral contains a distinctive arrangement of elements which determines its type and to which class it belongs to. The composition of these elements can determine its crystalline structure and physical properties. Oftentimes, different minerals can contain the same chemical composition, yet have contrasting physical traits. For example, both diamond and graphite are composed of pure carbon (C). Despite this, the carbon atoms within diamonds form a three dimensional lattice while the carbon atoms within graphite form a two dimensional network. Because of this, graphite is soft, dull and opaque while diamonds are transparent, rare, and form the hardest natural substance in the world.</p>
         </div>
       </div>
     </div>
@@ -179,31 +173,26 @@
   <!-- {I N T R O} > F O R M A T I O N -->
  <div id="formation">
   <div class="container">
-      <!-- ROW 1 -->
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <br />
-          <h2 style="color: #f4f3ee;">How are they formed?</h2>
-          <hr style="width: 255px;" /><br/><br/><br/>
-          <p style="color: #f4f3ee; font-size: 16px;">Minerals are formed from a variety of geological processes and determine its chemical composition and physical structure.
-          </p>
-        </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h2 class="heading">How are they formed?</h2>
+        <hr id="formationHr" />
+        <div class="clearfix"></div>
+        <p>Minerals are formed from a variety of geological processes and determine its chemical composition and physical structure.</p>
       </div>
+    </div>
 
-      <!-- FORMATION 1 -->
-      <!-- ROW 2 -->
-      <div class="row">
-        <div class="col-lg-10">
-          <p style="color: #f4f3ee; padding-top:10px; font-size: 16px;">
-            <span style="color:#d9ba9d; font-size: 24px;">When magma</span> is expelled from an active volcano, it becomes lava as it flows onto the surface of earth’s crust. The cooling and solidification of lava can develop igneous rocks through the process of crystallization. When specific conditions are met, igneous rocks can contain mineral deposits, which are called ores. These deposits vary in chemical composition and have the ability to produce differing classes of minerals. Most minerals formed through this process are crystalline.
-          </p>
-        </div>
-        <div class="col-lg-2">
-          <div class="counterDivTwo">
-            <img src="img/heat.png" width="100" height="100" style="margin-left: 30px; margin-top: 15px;" />
-          </div>
+    <!-- R O W 1 -->
+    <div class="row">
+      <div class="col-lg-10">
+        <p class="formation-text"><span style="color:#d9ba9d; font-size: 24px;">When magma</span> is expelled from an active volcano, it becomes lava as it flows onto the surface of earth’s crust. The cooling and solidification of lava can develop igneous rocks through the process of crystallization. When specific conditions are met, igneous rocks can contain mineral deposits, which are called ores. These deposits vary in chemical composition and have the ability to produce differing classes of minerals. Most minerals formed through this process are crystalline.</p>
+      </div>
+      <div class="col-lg-2">
+        <div class="formation-blurb">
+          <img id="formationHeat" src="img/heat.png" />
         </div>
       </div>
+    </div>
 
       <!-- divider -->
       <hr class="hr-divider" /><br /><br /><br /><br /><br />
@@ -1117,7 +1106,7 @@
     </div>
 
   <!-- F O O T E R  -->
-  <footer>
+  <footer id="contact">
       <div class="container">
           <div class="row">
               <div class="col-md-6">
