@@ -29,6 +29,9 @@
  * 01. Nav
  * 02. Hero
  * 03. Intro
+  > 03.1 Definition
+  > 03.2 Formation
+  > 03.3 Classification
  * 04. Demo
  * 05. Code
  * 06. Sources
@@ -77,18 +80,6 @@ p {
   color: #f4f3ee;
   font-size: 16px;
   padding-bottom: 20px;
-}
-
-.hr-divider {
-    display: block;
-    margin-top: 2.5em;
-    margin-bottom: 2.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-    text-align: center;
-    width: 100%;
 }
 
 .link:link {
@@ -244,12 +235,15 @@ a:active {
    background: rgba(255, 255, 255, 0.1);
  }
 
- #spacer {
+ .spacer {
    padding-top:30px;
  }
 
  /*************************
-  * 03.1 Intro > Definition
+  * 03 Introduction
+  *************************/
+ /*************************
+  * 03.1  > Definition
   *************************/
   #definition {
       min-height: 370px;
@@ -340,7 +334,7 @@ a:active {
 }
 
 /*************************
- * 03.1 Intro > Formation
+ * 03.2  > Formation
  *************************/
  #formation {
      min-height: 370px;
@@ -348,6 +342,18 @@ a:active {
      background-color:  #484f5e;
      border-top: 1px solid #e7e7e7;
      border-bottom: 1px solid #e7e7e7;
+ }
+
+ .hr-divider {
+     display: block;
+     margin-top: 2.5em;
+     margin-bottom: 2.5em;
+     margin-left: auto;
+     margin-right: auto;
+     border-style: inset;
+     border-width: 1px;
+     text-align: center;
+     width: 100%;
  }
 
  #formationHr {
@@ -368,17 +374,15 @@ a:active {
      width: 160px;
  }
 
- #formationHeat {
+ .formation-img {
    width: 100px;
    height: 100px;
    margin-left: 30px;
    margin-top: 15px;
  }
 
- 
-
  /*************************
-  * 03.1 Intro > Classification
+  * 03.3  > Classification
   *************************/
   #classification {
       min-height: 370px;
@@ -388,18 +392,33 @@ a:active {
       border-bottom: 1px solid #e7e7e7;
   }
 
-  .counterDivThree {
-      border-radius: 25px;
-      background: #9a9fa7;
-      height: 200px;
-      width: 360px;
-  }
+   #classificationHr {
+     width: 280px;
+     padding-bottom: 20px;
+   }
 
-  .counterDivFour {
+  .classification-blurb {
       border-radius: 25px;
       background: #9a9fa7;
       height: 200px;
       width: 100%;
+  }
+
+  .group-name {
+    font-size:35px;
+    text-align:center;
+    color: #d9ba9d;
+    padding-top:10px;
+    padding-bottom: 0px;
+  }
+
+  .group-description {
+    color: #f4f3ee;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-right:20px;
+    text-align:center;
+    font-size:15px;
   }
 
   .test {
@@ -409,14 +428,7 @@ a:active {
       width: 100%;
   }
 
-  .class-description {
-    color: #f4f3ee;
-    padding-bottom:20px;
-    padding-left:20px;
-    padding-right:20px;
-    text-align:center;
-    font-size:15px;
-  }
+
 
   .subclass-description {
     color: #f4f3ee;
