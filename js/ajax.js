@@ -1,6 +1,22 @@
-/*
--- SHOW ALL --
-*/
+/**
+ * ==================================================================================================
+ * AJAX.JS
+ * ==================================================================================================
+ * Author: Kaitlin Kidd
+ * Date: 11.16.16
+ * Version: 0.0.1
+ * Purpose: Ajax calls for app.
+ * --------------------------------------------------------------------------------------------------
+ * Revision History
+ * --------------------------------------------------------------------------------------------------
+ * Date          Revision Description                                                     Modified By
+ * --------------------------------------------------------------------------------------------------
+ * 11.16.2016 - Finalized AJAX calls.                                                         KAK
+ * ==================================================================================================
+ *
+ /***************************************************
+ ******************** SHOW ALL ******************
+ ****************************************************/
 $(document).ready(function() {
   $("#selectAllBtn").click(function() {
     function show_all() {
@@ -17,9 +33,9 @@ $(document).ready(function() {
   });
 });
 
-/*
--- ID SEARCH --
-*/
+/***************************************************
+******************** ID SEARCH ******************
+****************************************************/
 $(document).ready(function() {
   $("#button2").click(function() {
     function search_id() {
@@ -37,9 +53,9 @@ $(document).ready(function() {
   });
 });
 
-/*
--- NAME SEARCH --
-*/
+/*******************************************************
+******************** NAME SEARCH ******************
+****************************************************/
 $(document).ready(function() {
   $("#nameSearchBtn").click(function() {
     function search_name() {
@@ -57,9 +73,9 @@ $(document).ready(function() {
   });
 });
 
-/*
--- LETTER SEARCH --
-*/
+/**********************************************************
+******************** LETTER SEARCH ******************
+**********************************************************/
 $(document).ready(function() {
   $(".letter").click(function() {
     var letter= $(this).attr("value");
@@ -77,9 +93,9 @@ $(document).ready(function() {
   });
 });
 
-/*
--- COMPOSITION SEARCH --
-*/
+/******************************************************************
+******************** COMPOSITION SEARCH ******************
+*******************************************************************/
 $(document).ready(function() {
   $(".composition").click(function() {
     var composition= $(this).attr("value");
@@ -97,9 +113,9 @@ $(document).ready(function() {
   });
 });
 
-/*
--- CLASS SEARCH --
-*/
+/********************************************************
+******************** CLASS SEARCH ******************
+*********************************************************/
 $(document).ready(function() {
   $("#classSearchBtn").click(function() {
     var classification= $("input[name='class']:checked").val();
@@ -117,30 +133,9 @@ $(document).ready(function() {
   });
 });
 
-
-/*
--- CONTAINS SI --
-
-$(document).ready(function() {
-  $("#si").click(function() {
-    function show_selected_element() {
-      var si=$("#si").val();
-      $.ajax({
-        type: "POST",
-        url: "server.php",
-        data: {mineral_si: si},
-        success: function(data) {
-          $("#content").html(data);
-        }
-      });
-    }
-    show_selected_element();
-  });
-});
-*/
-/*
--- COLOR --
-*/
+/********************************************************
+******************** COLOR SEARCH ******************
+*********************************************************/
 $(document).ready(function() {
   $(".color").click(function() {
     var color= $(this).attr("value");
@@ -158,9 +153,9 @@ $(document).ready(function() {
   });
 });
 
-/*
--- FRACTURE --
-*/
+/*************************************************************
+******************** FRACTURE SEARCH ******************
+**************************************************************/
 $(document).ready(function() {
   $( "#fractureSelect" ).change(function() {
     var fracture= $("#fractureSelect").val();
@@ -177,7 +172,3 @@ $(document).ready(function() {
     search_fracture();
   });
 });
-
-/*
--- MOHS --
-*/
