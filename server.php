@@ -25,7 +25,7 @@ $mineral_mohs= $_POST["mineral_mohs"];
 if ($action == "showroom") {
   $query = "SELECT * FROM minerals";
   $show = mysqli_query($con, $query) or die ("Error");
-  echo "<table class='table' border='none'>
+  echo "<table border='none'>
     <tr>
       <td style='background:#f4f3ee; color: black;'>Name</td>
       <td style='background:#f4f3ee; color: black;'>Composition</td>

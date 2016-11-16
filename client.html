@@ -259,7 +259,7 @@
             <div id="rowSpace" class="row">
               <div class="col-lg-6">
                 <div class="mineral-class">
-                  <p class="class-name">Orthosilicates
+                  <p class="class-name">Nesosilicates
                     <br /><span style="font-size: 12px;"><em>island silicates</em>
                     <br />blocky, hard</span>
                   </p>
@@ -503,9 +503,38 @@
             <!--******************* C O M P O S I T I O N // S E A R C H  ****************** -->
             <!--*********************************************************************************** -->
             <div id="compositionSearchContainer">
-                <p style="padding-bottom:0px;"><span class="fa fa-flask" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">composition</span>.</p>
-                <button class="composition btn btn-outline-primary composition-search-btn" id="mg" value="Mg">Mg</button>
-                <button class="composition btn btn-outline-primary composition-search-btn" id="si" value="Si">Si</button>
+              <p style="padding-bottom:0px;"><span class="fa fa-flask" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">composition</span>.</p>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Ag" value="Ag">Ag</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Al" value="Al">Al</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="As" value="As">As</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Au" value="Au">Au</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Ba" value="Ba">Ba</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Be" value="Be">Be</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="B" value="B">B</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Ca" value="Ca">Ca</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="C" value="C">C</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Cs" value="Cs">Cs</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Cl" value="Cl">Cl</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Cr" value="Cr">Cr</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Cu" value="Cu">Cu</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="F" value="F">F</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Fe" value="Fe">Fe</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="H" value="H">H</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="K" value="K">K</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Li" value="Li">Li</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Mg" value="Mg">Mg</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Mn" value="Mn">Mn</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="N" value="N">N</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Na" value="Na">Na</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Ni" value="Ni">Ni</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="O" value="O">O</button>
+              <button class="composition btn btn-outline-primary composition-search-btn" id="Pb" value="Pb">Pb</button>
+                <button class="composition btn btn-outline-primary composition-search-btn" id="S" value="S">S</button>
+                <button class="composition btn btn-outline-primary composition-search-btn" id="Se" value="Se">Se</button>
+                <button class="composition btn btn-outline-primary composition-search-btn" id="Sb" value="Sb">Sb</button>
+                <button class="composition btn btn-outline-primary composition-search-btn" id="Si" value="Si">Si</button>
+                <button class="composition btn btn-outline-primary composition-search-btn" id="Ti" value="Ti">Ti</button>
+                <button class="composition btn btn-outline-primary composition-search-btn" id="Zn" value="Zn">Zn</button>
                 <br/>
             </div>
           </div>
@@ -524,7 +553,7 @@
               <br />
               <input class="class" type="radio" id="Inosilicate" value="Inosilicate" name="class"> <label>Inosilicate</label>
               <br />
-              <input class="class" type="radio" id="Orthosilicate" value="Orthosilicate" name="class"> <label>Orthosilicate</label>
+              <input class="class" type="radio" id="Nesosilicate" value="Nesosilicate" name="class"> <label>Nesosilicate</label>
               <br />
               <input class="class" type="radio" id="Phyllosilicate" value="Phyllosilicate" name="class"> <label>Phyllosilicate</label>
               <br />
@@ -550,8 +579,7 @@
               <br />
               <input class="class" type="radio" id="Phosphate" value="Phosphate" name="class">
               <label>Phosphate</label>
-            </div>
-            <div class="split">
+              <br />
               <input class="class" type="radio" id="Sulfate" value="Sulfate" name="class">
               <label>Sulfate</label>
               <br />
@@ -559,9 +587,9 @@
               <label>Sulfide</label>
               <br />
               <button class="btn btn-default" id="classSearchBtn">Search</button>
-            </div>
             <br/>
           </div>
+        </div>
 
           <!--*********************************************************************-->
           <!--******************* C O L O R  // S E A R C H  ****************** -->
@@ -592,8 +620,14 @@
             <p style="padding-bottom: 0px;"><span class="fa fa-industry" aria-hidden="true"></span> | Search by <span style="color:#e0c7b0;">fracture</span>.</p>
             <select id="fractureSelect" class="fractureSelect" onChange="search_fracture();">
              <option value="" name="" class="">-- Select --</option>
-             <option value="conchoidal" name="fracture" class="fracture">conchoidal</option>
-             <option value="micaceous" name="fracture" class="fracture">micaceous</option>
+             <option value="Conchoidal" name="fracture" class="fracture">Conchoidal</option>
+             <option value="Fibrous" name="fracture" class="fracture">Fibrous</option>
+             <option value="Hackly" name="fracture" class="fracture">Hackly</option>
+             <option value="Irregular" name="fracture" class="fracture">Irregular</option>
+             <option value="Micaceous" name="fracture" class="fracture">Micaceous</option>
+             <option value="Splintery" name="fracture" class="fracture">Splintery</option>
+             <option value="Sub-Conchoidal" name="fracture" class="fracture">Sub-Conchoidal</option>
+             <option value="Uneven" name="fracture" class="fracture">Uneven</option>
            </select>
             <br/>
             <br/>
