@@ -564,6 +564,7 @@ a:active {
     height: 350px;
     border-radius: 10px;
     margin-bottom:10px;
+    color: #f4f3ee;
   }
 
   .split {
@@ -641,7 +642,7 @@ a:active {
 
 #content {
   overflow-y: scroll;
-  height: 550px;
+  height: 760px;
 }
 
   .table th, .table td {
