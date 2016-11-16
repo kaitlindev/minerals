@@ -7,7 +7,7 @@ $(document).ready(function() {
       $.ajax({
         type: "POST",
         url: "server.php",
-        data: {action: "showroom"},
+        data: {action: "showAll"},
         success: function(data) {
           $("#content").html(data);
         }
