@@ -29,6 +29,7 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 
 ## **PENDING** ##
 * Add "Code" section.
+* Make responsive.
 * ~~Clean up scripts.~~
 * ~~Add entries to database.~~
 * ~~Convert in-line styles to external.~~
