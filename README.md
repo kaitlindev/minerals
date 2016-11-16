@@ -29,7 +29,7 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 
 ## **PENDING** ##
 * Add "Code" section.
-* Clean up scripts.
+* ~~Clean up scripts.~~
 * ~~Add entries to database.~~
 * ~~Convert in-line styles to external.~~
 * ~~Streamline id and class names in CSS.~~
