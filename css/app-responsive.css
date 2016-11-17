@@ -43,295 +43,446 @@
  /* ------------------------------------------------------------------------- */
  /* ------------------------ iPhone 6 - Portrait  ------------------------ */
  /* ------------------------------------------------------------------------- */
- @media only screen and (min-width : 375px) {
+@media only screen and (min-width : 375px) {
+  /*************************
+   * 00. Defaults
+   *************************/
+
    /*************************
- * 00. Defaults
- *************************/
-p {
-  font-size: 14px;
-}
- /*************************
-* 01. Nav
-*************************/
+  * 01. Nav
+  *************************/
 
-/*************************
-* 02. Hero
-*************************/
+  /*************************
+  * 02. Hero
+  *************************/
 
-/*************************
-* 03. Intro
-*************************/
+  /*************************
+  * 03. Intro
+  *************************/
+  /*************************
+   * 03.1  > Definition
+   *************************/
+   /*************************
+    * 03.2  > Formation
+    *************************/
+    /*************************
+     * 03.3  > Classification
+     *************************/
+     /*************************
+     * 03.4  > Properties
+      *************************/
+  /*************************
+  * 04. Demo
+  *************************/
 
-/*************************
-* 04. Demo
-*************************/
+  /*************************
+  * 05. Code
+  *************************/
 
-/*************************
-* 05. Code
-*************************/
+  /*************************
+  * 06. Sources
+  *************************/
 
-/*************************
-* 06. Sources
-*************************/
-
-/*************************
-* 07. Footer
-*************************/
-
+  /*************************
+  * 07. Footer
+  *************************/
 }
  /* ------------------------------------------------------------------------- */
  /* ------------------------ Extra Small Devices  ----------------------- */
  /* ------------------------------------------------------------------------- */
-  @media only screen and (min-width : 480px) {
- /*************************
- * 00. Defaults
- *************************/
- .heading {
-   font-size: 24px;
- }
+@media only screen and (min-width : 480px) {
+   /*************************
+   * 00. Defaults
+   *************************/
+   .heading {
+     font-size: 24px;
+   }
 
- /*************************
-* 01. Nav
-*************************/
+   /*************************
+  * 01. Nav
+  *************************/
 
-/*************************
-* 02. Hero
-*************************/
-#heroHeading > h1 {
-  font-size: 45px;
-}
+  /*************************
+  * 02. Hero
+  *************************/
+  #heroHeading > h1 {
+    font-size: 45px;
+  }
 
-#heroHeading > h3 {
-  font-size: 20px;
-}
+  #heroHeading > h3 {
+    font-size: 20px;
+  }
 
-#heroHeading > h5 {
-  font-size: 14px;
-}
+  #heroHeading > h5 {
+    font-size: 14px;
+  }
 
-.scroller {
-   width: 50px;
-   height: 45px;
-   margin-top: 15px;
-   border: 2px solid #fff;
-   border-radius: 100%!important;
-   font-size: 20px;
-   color: #fff;
-   background: 0 0;
-   -webkit-transition: background .3s ease-in-out;
-   -moz-transition: background .3s ease-in-out;
-   transition: background .3s ease-in-out;
-}
+  .scroller {
+     width: 50px;
+     height: 45px;
+     margin-top: 15px;
+     border: 2px solid #fff;
+     border-radius: 100%!important;
+     font-size: 20px;
+     color: #fff;
+     background: 0 0;
+     -webkit-transition: background .3s ease-in-out;
+     -moz-transition: background .3s ease-in-out;
+     transition: background .3s ease-in-out;
+  }
 
-/*************************
-* 03. Intro
-*************************/
-#definitionHr {
-  width: 170px;
-  padding-bottom: 20px;
-}
+  /*************************
+  * 03. Intro
+  *************************/
+  /*************************
+   * 03.1  > Definition
+   *************************/
+  #definitionHr {
+    width: 175px;
+    padding-bottom: 20px;
+  }
 
-.first-blurb {
-  width: 100%;
-  padding-left: 10px;
-}
+  .first-blurb {
+    width: 100%;
+    padding-left: 10px;
+  }
 
-.second-blurb {
-  width: 100%;
-  padding-bottom: 20px;
-  padding-left: 10px;
-}
+  .second-blurb {
+    width: 100%;
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
 
-.third-blurb {
-  width: 100%;
-  padding-left: 10px;
-  padding-bottom: 20px;
-}
+  .third-blurb {
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
 
-.definition-blurb {
-  border-radius: 25px;
-  background: #707682;
-  padding: 20px;
-  width: 100%;
-}
+  .definition-blurb {
+    border-radius: 25px;
+    background: #707682;
+    padding: 20px;
+    width: 100%;
+  }
+  /*************************
+   * 03.2  > Formation
+   *************************/
+  #formationHr {
+    width: 200px;
+    padding-bottom: 20px;
+  }
 
-#formationHr {
-  width: 200px;
-  padding-bottom: 20px;
-}
+  .formation-text {
+    color: #f4f3ee;
+    padding-top:10px;
+    font-size: 14px;
+  }
 
-.formation-text {
-  color: #f4f3ee;
-  padding-top:10px;
-  font-size: 14px;
-}
+  .formation-blurb {
+    border-radius: 25px;
+    background: #7e838e;
+    height: 130px;
+    width: 100%;
+  }
 
-.formation-blurb {
-  border-radius: 25px;
-  background: #7e838e;
-  height: 130px;
-  width: 100%;
-}
+  .formation-img {
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+  }
+  /*************************
+   * 03.3  > Classification
+   *************************/
+  #classificationHr {
+    width: 220px;
+    padding-bottom: 20px;
+  }
 
-.formation-img {
-  width: 100px;
-  height: 100px;
-  margin-left: 30px;
-}
+  .classification-blurb {
+    border-radius: 25px;
+    background: #9a9fa7;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-#classificationHr {
-  width: 220px;
-  padding-bottom: 20px;
-}
+  .mineral-class {
+      border-radius: 15px;
+      background: #9a9fa7;
+      height: 100px;
+      width: 100%;
+      margin-bottom: 10px;
+  }
+  /*************************
+  * 03.4  > Properties
+   *************************/
+  #propertiesHr {
+    width: 180px;
+    padding-bottom: 20px;
+  }
 
-.classification-blurb {
-  border-radius: 25px;
-  background: #9a9fa7;
-  height: 200px;
-  width: 100%;
-  margin-bottom: 20px;
-}
+  .properties-blurb {
+    border-radius: 25px;
+    background: #9e9fa6;
+    height: 190px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-#propertiesHr {
-  width: 180px;
-  padding-bottom: 20px;
-}
+  /*************************
+  * 04. Demo
+  *************************/
+  #demoHr {
+    width: 60px;
+    padding-bottom: 20px;
+  }
 
-.properties-blurb {
-  border-radius: 25px;
-  background: #9e9fa6;
-  height: 250px;
-  width: 100%;
-  margin-bottom: 20px;
-}
+  #nameSearchInput {
+    width: 80%;
+    float: left;
+    margin-right: 5px;
+  }
 
-#demoHr {
-  width: 60px;
-  padding-bottom: 20px;
-}
+  #letterSearchContainer {
+    background-color:  #939397;
+    padding: 10px 10px 10px 10px;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom:10px;
+  }
 
+  #compositionSearchContainer {
+    background-color:  #939397;
+    padding: 10px 10px 10px 10px;
+    height: 180px;
+    border-radius: 10px;
+    margin-bottom:10px;
+  }
 
-/*************************
-* 04. Demo
-*************************/
+  #colorSearchContainer {
+    background-color:  #939397;
+    padding: 10px 10px 10px 10px;
+    height: 140px;
+    border-radius: 10px;
+    margin-bottom:10px;
+  }
 
-/*************************
-* 05. Code
-*************************/
+  #content {
+    overflow-y: scroll;
+    height: 760px;
+    width: 100%;
+  }
 
-/*************************
-* 06. Sources
-*************************/
+  /*************************
+  * 05. Code
+  *************************/
 
-/*************************
-* 07. Footer
-*************************/
+  /*************************
+  * 06. Sources
+  *************************/
+
+  /*************************
+  * 07. Footer
+  *************************/
 }
  /* ------------------------------------------------------------------------- */
  /* ---------------------------  Small Devices  -------------------------- */
  /* ------------------------------------------------------------------------- */
-  @media only screen and (min-width : 768px) {
- /*************************
- * 00. Defaults
- *************************/
+@media only screen and (min-width : 768px) {
+   /*************************
+   * 00. Defaults
+   *************************/
+   .heading {
+     font-size: 26px;
+   }
+   /*************************
+  * 01. Nav
+  *************************/
 
- /*************************
-* 01. Nav
-*************************/
+  /*************************
+  * 02. Hero
+  *************************/
+  #heroHeading > h1 {
+    font-size: 65px;
+  }
 
-/*************************
-* 02. Hero
-*************************/
+  #heroHeading > h3 {
+    font-size: 25px;
+  }
 
-/*************************
-* 03. Intro
-*************************/
+  #heroHeading > h5 {
+    font-size: 17px;
+  }
 
-/*************************
-* 04. Demo
-*************************/
+  /*************************
+  * 03. Intro
+  *************************/
+  #definitionHr {
+    width: 190px;
+    padding-bottom: 20px;
+  }
 
-/*************************
-* 05. Code
-*************************/
+  .first-blurb {
+    padding-left: 0px;
+    width: 240px;
+  }
 
-/*************************
-* 06. Sources
-*************************/
+  .second-blurb {
+    padding-bottom: 20px;
+    padding-left: 0px;
+    width: 240px;
+  }
 
-/*************************
-* 07. Footer
-*************************/
+  .third-blurb {
+    padding-left: 0px;
+    padding-bottom: 20px;
+    width: 240px;
+  }
+
+  .definition-blurb {
+    border-radius: 25px;
+    background: #707682;
+    padding: 15px;
+    width: 220px;
+  }
+
+  #definitionMinerals {
+    width: 110px;
+    height: 120px;
+  }
+
+  .counter {
+    color: #d9ba9d;
+    font-size: 30px;
+}
+
+#formationHr {
+  width: 220px;
+  padding-bottom: 20px;
+}
+
+.properties-title {
+  font-size:35px;
+  text-align:center;
+  color: #d9ba9d;
+  padding-top:20px;
+  padding-bottom: 0px;
+}
+
+.properties-blurb {
+    border-radius: 25px;
+    background: #9e9fa6;
+    height: 200px;
+    width: 100%;
+}
+
+.group-name {
+  font-size:32px;
+  text-align:center;
+  color: #d9ba9d;
+  padding-top:10px;
+  padding-bottom: 0px;
+}
+
+.mineral-class {
+    border-radius: 15px;
+    background: #9a9fa7;
+    height: 100px;
+    width: 100%;
+}
+
+
+  /*************************
+  * 04. Demo
+  *************************/
+  #nameSearchInput {
+    width: 100%;
+    float: left;
+    margin-right: 5px;
+  }
+
+  /*************************
+  * 05. Code
+  *************************/
+
+  /*************************
+  * 06. Sources
+  *************************/
+
+  /*************************
+  * 07. Footer
+  *************************/
 }
  /* ------------------------------------------------------------------------- */
 /* ---------------------------  Medium Devices  ----------------------- */
 /* ------------------------------------------------------------------------- */
- @media only screen and (min-width : 992px) {
-/*************************
-* 00. Defaults
-*************************/
+@media only screen and (min-width : 992px) {
+  /*************************
+  * 00. Defaults
+  *************************/
 
-/*************************
-* 01. Nav
-*************************/
+  /*************************
+  * 01. Nav
+  *************************/
 
-/*************************
-* 02. Hero
-*************************/
+  /*************************
+  * 02. Hero
+  *************************/
 
-/*************************
-* 03. Intro
-*************************/
+  /*************************
+  * 03. Intro
+  *************************/
 
-/*************************
-* 04. Demo
-*************************/
+  /*************************
+  * 04. Demo
+  *************************/
 
-/*************************
-* 05. Code
-*************************/
+  /*************************
+  * 05. Code
+  *************************/
 
-/*************************
-* 06. Sources
-*************************/
+  /*************************
+  * 06. Sources
+  *************************/
 
-/*************************
-* 07. Footer
-*************************/
+  /*************************
+  * 07. Footer
+  *************************/
 }
 /* ------------------------------------------------------------------------- */
 /* -----------------------------  Large Devices  ------------------------ */
 /* ------------------------------------------------------------------------- */
- @media only screen and (min-width : 1200px) {
-/*************************
-* 00. Defaults
-*************************/
+@media only screen and (min-width : 1200px) {
+  /*************************
+  * 00. Defaults
+  *************************/
 
-/*************************
-* 01. Nav
-*************************/
+  /*************************
+  * 01. Nav
+  *************************/
 
-/*************************
-* 02. Hero
-*************************/
+  /*************************
+  * 02. Hero
+  *************************/
 
-/*************************
-* 03. Intro
-*************************/
+  /*************************
+  * 03. Intro
+  *************************/
 
-/*************************
-* 04. Demo
-*************************/
+  /*************************
+  * 04. Demo
+  *************************/
 
-/*************************
-* 05. Code
-*************************/
+  /*************************
+  * 05. Code
+  *************************/
 
-/*************************
-* 06. Sources
-*************************/
+  /*************************
+  * 06. Sources
+  *************************/
 
-/*************************
-* 07. Footer
-*************************/
+  /*************************
+  * 07. Footer
+  *************************/
 }
