@@ -47,7 +47,9 @@
    /*************************
  * 00. Defaults
  *************************/
-
+p {
+  font-size: 14px;
+}
  /*************************
 * 01. Nav
 *************************/
@@ -84,6 +86,9 @@
  /*************************
  * 00. Defaults
  *************************/
+ .heading {
+   font-size: 24px;
+ }
 
  /*************************
 * 01. Nav
@@ -92,10 +97,119 @@
 /*************************
 * 02. Hero
 *************************/
+#heroHeading > h1 {
+  font-size: 45px;
+}
+
+#heroHeading > h3 {
+  font-size: 20px;
+}
+
+#heroHeading > h5 {
+  font-size: 14px;
+}
+
+.scroller {
+   width: 50px;
+   height: 45px;
+   margin-top: 15px;
+   border: 2px solid #fff;
+   border-radius: 100%!important;
+   font-size: 20px;
+   color: #fff;
+   background: 0 0;
+   -webkit-transition: background .3s ease-in-out;
+   -moz-transition: background .3s ease-in-out;
+   transition: background .3s ease-in-out;
+}
 
 /*************************
 * 03. Intro
 *************************/
+#definitionHr {
+  width: 170px;
+  padding-bottom: 20px;
+}
+
+.first-blurb {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.second-blurb {
+  width: 100%;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.third-blurb {
+  width: 100%;
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+
+.definition-blurb {
+  border-radius: 25px;
+  background: #707682;
+  padding: 20px;
+  width: 100%;
+}
+
+#formationHr {
+  width: 200px;
+  padding-bottom: 20px;
+}
+
+.formation-text {
+  color: #f4f3ee;
+  padding-top:10px;
+  font-size: 14px;
+}
+
+.formation-blurb {
+  border-radius: 25px;
+  background: #7e838e;
+  height: 130px;
+  width: 100%;
+}
+
+.formation-img {
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+}
+
+#classificationHr {
+  width: 220px;
+  padding-bottom: 20px;
+}
+
+.classification-blurb {
+  border-radius: 25px;
+  background: #9a9fa7;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#propertiesHr {
+  width: 180px;
+  padding-bottom: 20px;
+}
+
+.properties-blurb {
+  border-radius: 25px;
+  background: #9e9fa6;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#demoHr {
+  width: 60px;
+  padding-bottom: 20px;
+}
+
 
 /*************************
 * 04. Demo
