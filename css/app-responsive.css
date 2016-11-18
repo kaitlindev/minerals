@@ -202,7 +202,7 @@
   .classification-blurb {
     border-radius: 25px;
     background: #9a9fa7;
-    height: 200px;
+    height: 220px;
     width: 100%;
     margin-bottom: 20px;
   }
@@ -362,19 +362,9 @@
   padding-bottom: 20px;
 }
 
-.properties-title {
-  font-size:35px;
-  text-align:center;
-  color: #d9ba9d;
-  padding-top:20px;
-  padding-bottom: 0px;
-}
-
-.properties-blurb {
-    border-radius: 25px;
-    background: #9e9fa6;
-    height: 200px;
-    width: 100%;
+#classificationHr {
+  width: 240px;
+  padding-bottom: 20px;
 }
 
 .group-name {
@@ -392,12 +382,26 @@
     width: 100%;
 }
 
+.properties-title {
+  font-size:35px;
+  text-align:center;
+  color: #d9ba9d;
+  padding-top:20px;
+  padding-bottom: 0px;
+}
+
+.properties-blurb {
+    border-radius: 25px;
+    background: #9e9fa6;
+    height: 200px;
+    width: 100%;
+}
 
   /*************************
   * 04. Demo
   *************************/
   #nameSearchInput {
-    width: 100%;
+    width: 90%;
     float: left;
     margin-right: 5px;
   }
