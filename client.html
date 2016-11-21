@@ -668,29 +668,97 @@
 
             <!-- PHP's MySQLi -->
             <h4>PHP's MySQLi</h4>
-              <p class="code-info">AJAX is essential for creating dynamic web pages where content can be updated seamlessly without the need for refreshing the whole page itself. When an event occurs, triggered by the user, data is exchanged between the browser and the server. When an http request is sent from the browser to the server, a response is created and the updated data is sent back to the browser to show the changed page content.</p>
+            <p class="code-info"><a class="link" href="http://php.net/manual/en/book.mysqli.php" target="_blank">MySQLi (MySQL Improved) Extension</a> is a relational database driver used to provide an interface with MySQL that was introduced with PHP version 5.0.0. MySQLi is an improvement on the older version of the PHP MySQL driver with sophisticated benefits, such as an object-oriented interface, debugging support and support for multiple statements. The MySQLi functions are used to access database servers found with MySQL version 4.1.13 or newer and can be accessed through multiple mysqli classes, such as <em>mysqli</em>, <em>mysqli_stmt</em>, <em>mysqli_result</em>, <em>mysqli_driver</em>, <em>mysqli_warning</em>, and <em>mysqli_sql_exception</em>. For this app, we are only using two classes: <em>mysqli</em> and <em>mysqli_result</em>.</p>
 
-              <p class="code-info">In this simple app, the current web page <span style="color:#c3a78d;">client.html </span>acts as a client and a PHP file <span style="color:#c3a78d;">server.php </span> is used to simulate a server. Data is exchanged between the two files when Javascript is triggered by three different HTML DOM events: <a class="link" href="http://www.w3schools.com/jsref/event_onkeyup.asp" target="_blank">onkeyup</a>, <a class="link" href="http://www.w3schools.com/jsref/event_onclick.asp"
-                      target="_blank">onclick</a> and <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a>.</p>
+            <!-- mysqli class -->
+            <h5>mysqli class</h5>
+            <p class="code-info">The methods used within the <a class="link" href="http://php.net/manual/en/class.mysqli.php" target="_blank">mysqli class</a> are:</p>
+            <ul class="sources-list">
+              <li>
+                <p class="code-info"><a class="link" href="http://php.net/manual/en/function.mysqli-connect.php" target="_blank">mysqli_connect()</a> - Establishes a connection to a MySQL database by using the required credentials.</p>
+              </li>
+              <li>
+                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli.close.php" target="_blank">mysqli_close()</a> - Closes an opened database connection.</p>
+              </li>
+              <li>
+                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli.connect-errno.php" target="_blank">mysqli_connect_errno()</a> - If there is an error connecting to the database, return the error code.</p>
+              </li>
+              <li>
+                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli.connect-error.php" target="_blank">mysqli_connect_error()</a> - If there is an error connecting to the database, return the error description.</p>
+              </li>
+              <li>
+                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli.query.php" target="_blank">mysqli_query()</a> - Runs a query on the database.</p>
+              </li>
+            </ul>
+            <!-- mysqli class -->
+            <h5>mysqli_result class</h5>
+            <p class="code-info">The methods used within the <a class="link" href="http://php.net/manual/en/class.mysqli-result.php" target="_blank">mysqli_result class</a> are:</p>
+            <ul class="sources-list">
+              <li>
+                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli-result.fetch-array.php" target="_blank">mysqli_fetch_array()</a> - The results of a query on a database are returned one per row as an array.</p>
+              </li>
+            </ul>
 
-              <p class="code-info">There are three different ways to search for stars: searching by name, filtering by distance in light years, and selecting the constellation that the star belongs to. Each method requires making an <a class="link" href="http://api.jquery.com/jquery.ajax/"
-                      target="_blank">ajax call</a> with the help of a JQuery script.</p>
+            <div class="clearfix"></div>
+            <hr class="hr-divider" />
+            <div class="clearfix"></div>
 
-              <!-- mysqli class -->
-              <h5>mysqli class</h5>
+            <!-- Minerals Database -->
+            <h4>Minerals Database</h4>
+            <p class="code-info">The MySQL database that is being used for this app is small (only 92 rows) and  contains one table with ten columns. The table is called “minerals” and the structure is as follows: </p>
+            <ul class="sources-list">
+              <li>
+                <p class="code-info">id - primary key; auto-increment; int(2)</p>
+              </li>
+              <li>
+                <p class="code-info">name - varchar(30)</p>
+              </li>
+              <li>
+                <p class="code-info">composition - varchar(40)</p>
+              </li>
+              <li>
+                <p class="code-info">group - varchar(30)</p>
+              </li>
+              <li>
+                <p class="code-info">class - varchar(30)</p>
+              </li>
+              <li>
+                <p class="code-info">color - varchar(30)</p>
+              </li>
+              <li>
+                <p class="code-info">mohs - decimal(3,1)</p>
+              </li>
+              <li>
+                <p class="code-info">fracture - varchar(30)</p>
+              </li>
+              <li>
+                <p class="code-info">cleavage - varchar(30)</p>
+              </li>
+              <li>
+                <p class="code-info">tenacity - varchar(30)</p>
+              </li>
+            </ul>
 
-                <p class="code-info">A user will be able to search a small hard-coded array of star "objects", containing attributes such as name, distance (in light years) and the constellation that contains the star. The simulation of star "objects" will be shown in the server file code below.</p>
+            <div class="clearfix"></div>
+            <hr class="hr-divider" />
+            <div class="clearfix"></div>
 
-              <!-- AJAX-->
-              <h4>AJAX</h4>
-                <p class="code-info">As a character is entered or removed within the text field, results will be updated asynchronously. The input collected from the user will be compared against the collection of star names stored as attributes within the star objects. An ajax call is continuously sifting through the star names to find the ones that match the input.</p>
+            <!-- AJAX -->
+            <h4>AJAX</h4>
+            <p class="code-info">This app queries the minerals database based on seven different criteria: name, the letter that it starts with, composition, class, color, fracture and mohs value. For each of these criteria, there is a function that is triggered by a user event (in this case, a button <a class="link" href="https://api.jquery.com/click/" target="_blank">click</a> or the movement of a <a class="link" href="https://jqueryui.com/slider/" target="_blank">JQuery UI Slider</a>). These functions contain ajax calls that both send and retrieve data from a PHP script. Each button is assigned a unique value that can be used to perform a query on the database. For example, there is a button with a value of "blue" that is used to query the database for all minerals that are colored blue. When this button is clicked, the value of "blue" is retrieved using a JQuery function and sent through a function search_color() (explained below). That function <a class="link" href="https://api.jquery.com/jquery.post/" target="_blank">"POSTS"</a> the string "blue" as data through an ajax call to the url "server.php" which contains the PHP code that connects to the MySQL database. It is saved as a PHP variable where it is then fed into a query that can return an array of all matching results. These results are <a class="link" href="http://php.net/manual/en/function.echo.php" target="_blank">echoed</a>, and on the successful completion of the function, are then posted to a div on the page, #content, using <a class="link" href="http://api.jquery.com/html/" target="_blank">html()</a>. </p>
 
-              <!-- how it works -->
-              <h4>How it works</h4>
+            <p class="code-info"></p>
+
+            <div class="clearfix"></div>
+            <hr class="hr-divider" />
+            <div class="clearfix"></div>
+
+            <!-- how it works -->
+            <h4>How it works</h4>
 
                 <!-- A C C O R D I A N S -->
 
-              <!-- SELECT ALL -->
+                <!-- SELECT ALL -->
                 <button id="selectAll" class="accordion">select all</button>
                   <div class="panel">
                   <!-- client -->
@@ -744,7 +812,7 @@
                   <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
 
                   <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                </div>
+                  </div>
 
                 <!-- SEARCH BY NAME -->
                 <button id="searchByName" class="accordion">search by name</button>
