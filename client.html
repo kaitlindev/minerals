@@ -759,8 +759,8 @@
 
             <!-- SELECT ALL -->
             <button id="selectAll" class="accordion">select all</button>
-              <div class="panel">
 
+              <div class="panel">
               <!-- HTML -->
               <h4>HTML</h4>
               <p class="code-info">On our web page acting as the client, we only need a single button that triggers the show_all() function (below) that contains the ajax call to the server, "server.php".</p>
@@ -769,9 +769,8 @@
 
               <p class="code-info">The results of the select all query will be appended to a paragraph tag to the right using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
 
-              <pre><code>&lt;div id=&quot;resultsContainer&quot;&gt; <br />&#09;&lt;div id=&quot;content&quot;&gt;&lt;/div&gt; <br />&lt;/div&gt;</code></pre>
+              <pre><code>&lt;div id=&quot;content&quot;&gt;&lt;/div&gt; </code></pre>
 
-              <br />
               <!-- AJAX/JQuery -->
               <h4>Ajax/JQuery</h4>
 
@@ -781,42 +780,26 @@
 
               <p class="code-info">In the above function, clicking the button #selectAllBtn triggers a function on document ready that calls $.ajax. The data is simply a key-value pair: the string "showAll" is assigned to "action" as a way to describe what data is being sent. The string "showAll" will be stored in a PHP variable in server.php. If the ajax call is successful, all rows that are stored in the minerals database will be returned and be appended to the &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;  which can be seen on client.html almost instantaneously.</p>
 
-              <br />
               <!-- PHP -->
               <h4>PHP</h4>
               <p class="code-info">Within the PHP, first the connection to the database must be established using <a class="link" href="http://php.net/manual/en/function.mysqli-connect.php" target="_blank">mysqli_connect()</a>. After we check for errors and find that the connection is successful, we can store the value we need from the AJAX call into a php variable as needed for the query:</p>
 
               <pre><code>// "key" : "value" > "action" : "showAll"<br />$action = $_POST[&quot;action&quot;];</code></pre>
 
-              <p class="code-info">A table header is built and ready to be echoed: </p>
+              <p class="code-info">A table header is built:</p>
 
-              <pre><code>// "key" : "value" > "action" : "showAll"<br />$action = $_POST[&quot;action&quot;];</code></pre>
+              <pre><code>$tableHeaderColor = &quot;&lt;table class='table-condensed'&gt; <br />&#09;&lt;tr&gt;<br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Name&lt;/td&gt;<br />&#09;&#09; &lt;td style='background:#f4f3ee; color: black;'&gt;Group&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Class&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Color&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Mohs&lt;/td&gt;<br />&#09;&#09; &lt;td style='background:#f4f3ee; color: black;'&gt;Fracture&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Cleavage&lt;/td&gt; <br />&#09;&lt;/tr&gt;&quot;;</code></pre>
 
-              Within server.php you can use <a class="link" href="http://php.net/manual/en/reserved.variables.request.php" target="_blank">$_REQUEST</a> to receive the data from the client and store it into a variable. Afterwards, you can store the value of the characters typed into the input field gathered from the data provided by the ajax call and store that into a separate variable: </p>
+              <p class="code-info">And now we can build our query to select all the minerals from the database: </p>
 
-              <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [1.] Star name<br />$name = $data['star_name']; // collect the input from form input 'star_name'</code> </pre>
+              <pre><code>if ($action == &quot;showAll&quot;) { <br />&#09;$query = &quot;SELECT * FROM minerals&quot;; <br />&#09;$show = mysqli_query($con, $query) or die (&quot;Error&quot;); <br />&#09;echo $tableHeaderColor;</code> </pre>
 
-              <p class="code-info">The hard-coded small-scale star database is held within a <a class="link" href="http://www.w3schools.com/php/php_arrays_multi.asp" target="_blank">php array of arrays</a> in the following format: </p>
+              <p class="code-info">It is necessary to determine which search method is being used by the user at any given moment based on click events, so the if statement above is used to determine that the "Search All" button has been clicked. First, we check that $action holds "show all" and if so, we can write a query and store it in $query. Now, we can query the database using the <a class="link" href="http://php.net/manual/en/mysqli.query.php" target="_blank">mysqli_query()</a> function, only if there is no error. Before we print out the results of the query, we must build a table element to organize the data and display it correctly. The final results should mimic the actual structure of the existing minerals database and look very similar. To start building the table, we echo the table header that we created earlier. Now, we are ready to echo the results of the query.</p>
 
-              <pre><code>// data array<br />$star_array = array( <br />&#09;array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2', 'attribute3' =&gt; 'value3' ... ), <br />&#09;array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2', 'attribute3' =&gt; 'value3' ... )<br />);</code></pre>
+              <p class="code-info">Using <a class="link" href="http://php.net/manual/en/mysqli-result.fetch-array.php" target="_blank">mysqli_fetch_array()</a>, each hit from the query will be stored in its own row. These rows are stored in an array that can be traversed and printed out while following the structure that was set forth by the table header. So for each row, the name, group, class, color, mohs, fracture and cleavage will be displayed as corresponding to the table header above. The rows are fetched by: </p>
 
-              <p class="code-info">In this example, the array of arrays is formatted like so: </p>
+              <pre><code>while($row = mysqli_fetch_array($show)) { <br />&#09;echo &quot;&lt;tr&gt;&lt;td&gt;&lt;p style='font-size: 12px; color: #e0c7b0;'&gt;&quot;<br />&#09; . $row['name'] .<br />&#09; &quot;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;. $row['group'] .<br />&#09; &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;. $row['class'] . <br />&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; . $row['color'] . &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; . $row['mohs'] . &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; . $row['fracture'] . &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; . $row['cleavage'] . &quot;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&quot;; } echo &quot;&lt;/table&quot;; }</code> </pre>
 
-              <pre><code>$star_data = array( <br />&#09;array('name' =&gt; 'Proxima Centauri', 'distance' =&gt; '4.243',  'constellation' =&gt; 'Centaurus','evolution' =&gt; 'Red Dwarf'),<br />&#09;array('name' =&gt; 'Alpha Centauri A', 'distance' =&gt; '4.37',   'constellation' =&gt; 'Centaurus', 'evolution' =&gt; 'Main Sequence'),<br />&#09;.... <br />);</code></pre>
-
-              <p class="code-info">In order to send a response back to the client, we must determine if the user has found any star name matches within our php "database". Since results will be continuously updated, new results should appear or disappear as the user types or deletes characters within the text field. We can iterate through all the star names within the star objects and check that the string of characters are found within it. The more characters a user types, the more
-              specific the results will be and less likely to find a hit. However, if a user only types a few characters, it will display more results from a broader search. We can achieve this search functionality with a simple for-loop:
-              </p>
-
-              <pre><code>// results array<br />$results = array();<br /><br />for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) {<br />&#09;if( stripos( $star_data[$count]['name'] , $name ) !== false ) {<br />&#09;&#09;array_push( $results , $star_data[$count] );<br />&#09;}<br />}</code></pre>
-
-              <p class="code-info">We can create a new array, $results, that will hold the final results of the search that will be sent back to the client. To store results into that array, we will first create an iterator variable, $count, that will start at value
-              0 and loop through the size of the $star_data array. For each iteration, $name will be checked to see if it can be found within the ['name'] attribute of the star object, and if so, the star object will be pushed to the $results
-              array. If not, it is skipped. <a class="link" href="http://php.net/manual/en/function.stripos.php" target="_blank">stripos</a> is used to find an occurance of the value of $name within the ['name'].</p>
-
-              <p class="code-info">And finally, the data is returned to the client in JSON format to be read by the client: </p>
-
-              <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
 
               <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
               </div>
