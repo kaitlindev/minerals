@@ -144,6 +144,10 @@ a:active {
   padding-top: 30px;
 }
 
+.sources-list li {
+  font-size: 16px;
+}
+
 /*************************
  * 01. Nav
  *************************/
@@ -672,7 +676,8 @@ pre {
 }
 
 code {
-  font-family: Dosis, sans-serif;
+  font-family: 'Jaldi', sans-serif;
+  font-size: 15px;
 }
 
 /* Source: http://www.w3schools.com/howto/howto_js_accordion.asp */
@@ -718,18 +723,18 @@ div.panel {
 div.panel.show {
     opacity: 1;
     max-height: 2200px;
-    background-color: #0e0816;
+    background-color: #847b7a;
 }
 
 .panel {
-  background-color: #060201;
+  background-color: #847b7a;
   margin-bottom: 0px;
 }
 
 #topButton {
   float: right;
-  background-color:#734c53;
-  border-color:#734c53;
+  background-color:#79787e;
+  border-color:#79787e;
   color: #fff;
   margin-bottom: 5px;
 }
@@ -742,28 +747,12 @@ div.panel.show {
   background-color: #efe3d7;
 }
 
-#searchByLetter {
+#searchByClass {
   background-color: #e8d5c4;
 }
 
-#searchByComposition {
-  background-color: #e0c7b0;
-}
-
-#searchByClass {
-  background-color: #d9ba9d;
-}
-
-#searchByColor {
-  background-color: #c3a78d;
-}
-
-#searchByFracture {
-  background-color: #af967e;
-}
-
 #searchByMohs {
-  background-color: #9d8771;
+  background-color: #e0c7b0;
 }
 
 /*************************

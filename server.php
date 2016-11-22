@@ -108,7 +108,7 @@ if ($mineral_id != null) {
 ******************** SEARCH NAME ******************
 ****************************************************/
 if ($mineral_name != null) {
-  $query = "SELECT * FROM minerals WHERE name LIKE '%$mineral_name%'"; // '%es%';
+  $query = "SELECT * FROM minerals WHERE name LIKE '%$mineral_name%'"; 
   $show = mysqli_query($con, $query) or die ("Error");
   echo $tableHeaderColor;
 

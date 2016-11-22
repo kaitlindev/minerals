@@ -675,19 +675,19 @@
             <p class="code-info">The methods used within the <a class="link" href="http://php.net/manual/en/class.mysqli.php" target="_blank">mysqli class</a> are:</p>
             <ul class="sources-list">
               <li>
-                <p class="code-info"><a class="link" href="http://php.net/manual/en/function.mysqli-connect.php" target="_blank">mysqli_connect()</a> - Establishes a connection to a MySQL database by using the required credentials.</p>
+                <a class="link" href="http://php.net/manual/en/function.mysqli-connect.php" target="_blank">mysqli_connect()</a> - Establishes a connection to a MySQL database by using the required credentials.
               </li>
               <li>
-                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli.close.php" target="_blank">mysqli_close()</a> - Closes an opened database connection.</p>
+                <a class="link" href="http://php.net/manual/en/mysqli.close.php" target="_blank">mysqli_close()</a> - Closes an opened database connection.
               </li>
               <li>
-                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli.connect-errno.php" target="_blank">mysqli_connect_errno()</a> - If there is an error connecting to the database, return the error code.</p>
+                <a class="link" href="http://php.net/manual/en/mysqli.connect-errno.php" target="_blank">mysqli_connect_errno()</a> - If there is an error connecting to the database, return the error code.
               </li>
               <li>
-                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli.connect-error.php" target="_blank">mysqli_connect_error()</a> - If there is an error connecting to the database, return the error description.</p>
+                <a class="link" href="http://php.net/manual/en/mysqli.connect-error.php" target="_blank">mysqli_connect_error()</a> - If there is an error connecting to the database, return the error description.
               </li>
               <li>
-                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli.query.php" target="_blank">mysqli_query()</a> - Runs a query on the database.</p>
+                <a class="link" href="http://php.net/manual/en/mysqli.query.php" target="_blank">mysqli_query()</a> - Runs a query on the database.
               </li>
             </ul>
             <!-- mysqli class -->
@@ -695,7 +695,7 @@
             <p class="code-info">The methods used within the <a class="link" href="http://php.net/manual/en/class.mysqli-result.php" target="_blank">mysqli_result class</a> are:</p>
             <ul class="sources-list">
               <li>
-                <p class="code-info"><a class="link" href="http://php.net/manual/en/mysqli-result.fetch-array.php" target="_blank">mysqli_fetch_array()</a> - The results of a query on a database are returned one per row as an array.</p>
+                <a class="link" href="http://php.net/manual/en/mysqli-result.fetch-array.php" target="_blank">mysqli_fetch_array()</a> - The results of a query on a database are returned one per row as an array.
               </li>
             </ul>
 
@@ -708,34 +708,34 @@
             <p class="code-info">The MySQL database that is being used for this app is small (only 92 rows) and  contains one table with ten columns. The table is called “minerals” and the structure is as follows: </p>
             <ul class="sources-list">
               <li>
-                <p class="code-info">id - primary key; auto-increment; int(2)</p>
+                id - primary key; auto-increment; int(2)
               </li>
               <li>
-                <p class="code-info">name - varchar(30)</p>
+                 name - varchar(30)
               </li>
               <li>
-                <p class="code-info">composition - varchar(40)</p>
+                 composition - varchar(40)
               </li>
               <li>
-                <p class="code-info">group - varchar(30)</p>
+                 group - varchar(30)
               </li>
               <li>
-                <p class="code-info">class - varchar(30)</p>
+                 class - varchar(30)
               </li>
               <li>
-                <p class="code-info">color - varchar(30)</p>
+                 color - varchar(30)
               </li>
               <li>
-                <p class="code-info">mohs - decimal(3,1)</p>
+                 mohs - decimal(3,1)
               </li>
               <li>
-                <p class="code-info">fracture - varchar(30)</p>
+                 fracture - varchar(30)
               </li>
               <li>
-                <p class="code-info">cleavage - varchar(30)</p>
+                 cleavage - varchar(30)
               </li>
               <li>
-                <p class="code-info">tenacity - varchar(30)</p>
+                 tenacity - varchar(30)
               </li>
             </ul>
 
@@ -743,377 +743,210 @@
             <hr class="hr-divider" />
             <div class="clearfix"></div>
 
-            <!-- AJAX -->
-            <h4>AJAX</h4>
+            <!-- AJAX + JQuery -->
+            <h4>AJAX + JQuery</h4>
             <p class="code-info">This app queries the minerals database based on seven different criteria: name, the letter that it starts with, composition, class, color, fracture and mohs value. For each of these criteria, there is a function that is triggered by a user event (in this case, a button <a class="link" href="https://api.jquery.com/click/" target="_blank">click</a> or the movement of a <a class="link" href="https://jqueryui.com/slider/" target="_blank">JQuery UI Slider</a>). These functions contain ajax calls that both send and retrieve data from a PHP script. Each button is assigned a unique value that can be used to perform a query on the database. For example, there is a button with a value of "blue" that is used to query the database for all minerals that are colored blue. When this button is clicked, the value of "blue" is retrieved using a JQuery function and sent through a function search_color() (explained below). That function <a class="link" href="https://api.jquery.com/jquery.post/" target="_blank">"POSTS"</a> the string "blue" as data through an ajax call to the url "server.php" which contains the PHP code that connects to the MySQL database. It is saved as a PHP variable where it is then fed into a query that can return an array of all matching results. These results are <a class="link" href="http://php.net/manual/en/function.echo.php" target="_blank">echoed</a>, and on the successful completion of the function, are then posted to a div on the page, #content, using <a class="link" href="http://api.jquery.com/html/" target="_blank">html()</a>. </p>
-
-            <p class="code-info"></p>
 
             <div class="clearfix"></div>
             <hr class="hr-divider" />
             <div class="clearfix"></div>
 
             <!-- how it works -->
-            <h4>How it works</h4>
+            <h4>How It Works</h4>
+            <p class="code-info">Below, I will explain how four different search methods are executed on the minerals database in my detail.</p>
 
-                <!-- A C C O R D I A N S -->
+            <!-- A C C O R D I A N S -->
 
-                <!-- SELECT ALL -->
-                <button id="selectAll" class="accordion">select all</button>
-                  <div class="panel">
-                  <!-- client -->
-                  <h5>client</h5>
-                  <p class="code-info">For our web page acting as the client, we have a basic input field with an id and function that is triggered <a class="link" href="http://www.w3schools.com/jsref/event_onkeyup.asp" target="_blank">onkeyup:</a></p>
+            <!-- SELECT ALL -->
+            <button id="selectAll" class="accordion">select all</button>
+              <div class="panel">
 
-                  <pre><code>&lt;h4&gt;Search stars by name: &lt;/h4&gt;<br />&lt;input class="form-control" type="text" id="star_name" name="star_name" onkeyup="getStarsByName();"/&gt;</code></pre>
+              <!-- HTML -->
+              <h4>HTML</h4>
+              <p class="code-info">On our web page acting as the client, we only need a single button that triggers the show_all() function (below) that contains the ajax call to the server, "server.php".</p>
 
-                  <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+              <pre><code>&lt;div id=&quot;selectAllContainer&quot;&gt; <br />&#09;&lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot; id=&quot;selectAllBtn&quot;&gt;Select All&lt;/button&gt;<br /> &lt;/div&gt;</code></pre>
 
-                  <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+              <p class="code-info">The results of the select all query will be appended to a paragraph tag to the right using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
 
-                  <!-- ajax -->
-                  <h5>Ajax</h5>
+              <pre><code>&lt;div id=&quot;resultsContainer&quot;&gt; <br />&#09;&lt;div id=&quot;content&quot;&gt;&lt;/div&gt; <br />&lt;/div&gt;</code></pre>
 
-                  <p class="code-info">By importing the JQuery library, you can perform an asynchronous http request with <a class="link" href="http://api.jquery.com/jquery.ajax/" target="_blank">$.ajax.</a> The following function is needed to form the connection between
-                      client and server:</p>
+              <br />
+              <!-- AJAX/JQuery -->
+              <h4>Ajax/JQuery</h4>
 
-                  <pre><code>function getStarsByName() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_name=" + $('#star_name').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+              <p class="code-info">By importing the JQuery library, you can perform an asynchronous http request with <a class="link" href="http://api.jquery.com/jquery.ajax/" target="_blank">$.ajax.</a> The following function is needed to form the connection between client and server:</p>
 
-                  <p class="code-info">In the above function, if the ajax call is successful, the name, distance and constellation attributes of the star "objects" (in JSON format) will be appended to the &lt;p&gt;, which can be seen on <span style="color:#9d8186;">client.html</span>                            almost instantaneously. You can see where name, distance and constellation come from by viewing the contents of the <span style="color:#9d8186;">server.php </span>below. </p>
+              <pre><code>$(document).ready(function() { <br />&#09;$(&quot;#selectAllBtn&quot;).click(function() {<br />&#09;&#09; function show_all() { <br />&#09;&#09;&#09;$.ajax({ <br />&#09;&#09;&#09;&#09;type: &quot;POST&quot;, <br />&#09;&#09;&#09;&#09;url: &quot;server.php&quot;, <br />&#09;&#09;&#09;&#09;data: {action: &quot;showAll&quot;}, <br />&#09;&#09;&#09;&#09;success: function(data) { <br />&#09;&#09;&#09;&#09;&#09;$(&quot;#content&quot;).html(data); <br />&#09;&#09;&#09;&#09;}<br />&#09;&#09;&#09;  });<br />&#09;&#09; } <br />&#09;&#09;show_all(); <br />&#09;}); <br />});<br /></code></pre>
 
-                  <!-- server -->
-                  <h5>Server</h5>
-                  <p class="code-info">Within <span style="color:#9d8186;">server.php </span>, you can use <a class="link" href="http://php.net/manual/en/reserved.variables.request.php" target="_blank">$_REQUEST</a> to receive the data from the client and store it into
-                      a variable. Afterwards, you can store the value of the characters typed into the input field gathered from the data provided by the ajax call and store that into a separate variable: </p>
+              <p class="code-info">In the above function, clicking the button #selectAllBtn triggers a function on document ready that calls $.ajax. The data is simply a key-value pair: the string "showAll" is assigned to "action" as a way to describe what data is being sent. The string "showAll" will be stored in a PHP variable in server.php. If the ajax call is successful, all rows that are stored in the minerals database will be returned and be appended to the &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;  which can be seen on client.html almost instantaneously.</p>
 
-                  <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [1.] Star name<br />$name = $data['star_name']; // collect the input from form input 'star_name'</code> </pre>
+              <br />
+              <!-- PHP -->
+              <h4>PHP</h4>
+              <p class="code-info">Within the PHP, first the connection to the database must be established using <a class="link" href="http://php.net/manual/en/function.mysqli-connect.php" target="_blank">mysqli_connect()</a>. After we check for errors and find that the connection is successful, we can store the value we need from the AJAX call into a php variable as needed for the query:</p>
 
-                  <p class="code-info">The hard-coded small-scale star database is held within a <a class="link" href="http://www.w3schools.com/php/php_arrays_multi.asp" target="_blank">php array of arrays</a> in the following format: </p>
+              <pre><code>// "key" : "value" > "action" : "showAll"<br />$action = $_POST[&quot;action&quot;];</code></pre>
 
-                  <pre><code>// data array<br />$star_array = array( <br />&#09;array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2', 'attribute3' =&gt; 'value3' ... ), <br />&#09;array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2', 'attribute3' =&gt; 'value3' ... )<br />);</code></pre>
+              <p class="code-info">A table header is built and ready to be echoed: </p>
 
-                  <p class="code-info">In this example, the array of arrays is formatted like so: </p>
+              <pre><code>// "key" : "value" > "action" : "showAll"<br />$action = $_POST[&quot;action&quot;];</code></pre>
 
-                  <pre><code>$star_data = array( <br />&#09;array('name' =&gt; 'Proxima Centauri', 'distance' =&gt; '4.243',  'constellation' =&gt; 'Centaurus','evolution' =&gt; 'Red Dwarf'),<br />&#09;array('name' =&gt; 'Alpha Centauri A', 'distance' =&gt; '4.37',   'constellation' =&gt; 'Centaurus', 'evolution' =&gt; 'Main Sequence'),<br />&#09;.... <br />);</code></pre>
+              Within server.php you can use <a class="link" href="http://php.net/manual/en/reserved.variables.request.php" target="_blank">$_REQUEST</a> to receive the data from the client and store it into a variable. Afterwards, you can store the value of the characters typed into the input field gathered from the data provided by the ajax call and store that into a separate variable: </p>
 
-                  <p class="code-info">In order to send a response back to the client, we must determine if the user has found any star name matches within our php "database". Since results will be continuously updated, new results should appear or disappear as the
-                      user types or deletes characters within the text field. We can iterate through all the star names within the star objects and check that the string of characters are found within it. The more characters a user types, the more
-                      specific the results will be and less likely to find a hit. However, if a user only types a few characters, it will display more results from a broader search. We can achieve this search functionality with a simple for-loop:
-                      </p>
+              <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [1.] Star name<br />$name = $data['star_name']; // collect the input from form input 'star_name'</code> </pre>
 
-                  <pre><code>// results array<br />$results = array();<br /><br />for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) {<br />&#09;if( stripos( $star_data[$count]['name'] , $name ) !== false ) {<br />&#09;&#09;array_push( $results , $star_data[$count] );<br />&#09;}<br />}</code></pre>
+              <p class="code-info">The hard-coded small-scale star database is held within a <a class="link" href="http://www.w3schools.com/php/php_arrays_multi.asp" target="_blank">php array of arrays</a> in the following format: </p>
 
-                  <p class="code-info">We can create a new array, $results, that will hold the final results of the search that will be sent back to the client. To store results into that array, we will first create an iterator variable, $count, that will start at value
-                      0 and loop through the size of the $star_data array. For each iteration, $name will be checked to see if it can be found within the ['name'] attribute of the star object, and if so, the star object will be pushed to the $results
-                      array. If not, it is skipped. <a class="link" href="http://php.net/manual/en/function.stripos.php" target="_blank">stripos</a> is used to find an occurance of the value of $name within the ['name'].</p>
+              <pre><code>// data array<br />$star_array = array( <br />&#09;array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2', 'attribute3' =&gt; 'value3' ... ), <br />&#09;array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2', 'attribute3' =&gt; 'value3' ... )<br />);</code></pre>
 
-                  <p class="code-info">And finally, the data is returned to the client in JSON format to be read by the client: </p>
+              <p class="code-info">In this example, the array of arrays is formatted like so: </p>
 
-                  <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+              <pre><code>$star_data = array( <br />&#09;array('name' =&gt; 'Proxima Centauri', 'distance' =&gt; '4.243',  'constellation' =&gt; 'Centaurus','evolution' =&gt; 'Red Dwarf'),<br />&#09;array('name' =&gt; 'Alpha Centauri A', 'distance' =&gt; '4.37',   'constellation' =&gt; 'Centaurus', 'evolution' =&gt; 'Main Sequence'),<br />&#09;.... <br />);</code></pre>
 
-                  <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                  </div>
+              <p class="code-info">In order to send a response back to the client, we must determine if the user has found any star name matches within our php "database". Since results will be continuously updated, new results should appear or disappear as the user types or deletes characters within the text field. We can iterate through all the star names within the star objects and check that the string of characters are found within it. The more characters a user types, the more
+              specific the results will be and less likely to find a hit. However, if a user only types a few characters, it will display more results from a broader search. We can achieve this search functionality with a simple for-loop:
+              </p>
 
-                <!-- SEARCH BY NAME -->
-                <button id="searchByName" class="accordion">search by name</button>
-                    <div class="panel">
-                        <!-- client -->
-                        <h5>Client</h5>
-                        <p class="code-info">The user can select a distance filter from three available buttons: </p>
+              <pre><code>// results array<br />$results = array();<br /><br />for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) {<br />&#09;if( stripos( $star_data[$count]['name'] , $name ) !== false ) {<br />&#09;&#09;array_push( $results , $star_data[$count] );<br />&#09;}<br />}</code></pre>
 
-                        <pre><code>&lt;button id=&quot;star_distance_one&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_one&quot; type=&quot;button&quot; value=&quot;5&quot; onclick=&quot;getStarsByDistanceFilterOne();&quot;&gt; &lt; 5 &lt;/button&gt;<br/>&lt;button id=&quot;star_distance_two&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_two&quot; type=&quot;button&quot; value=&quot;10&quot; onclick=&quot;getStarsByDistanceFilterTwo();&quot;&gt; 5 - 10 &lt;/button&gt;<br/>&lt;button id=&quot;star_distance_three&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_three&quot; type=&quot;button&quot; value=&quot;15&quot; onclick=&quot;getStarsByDistanceFilterThree();&quot;&gt; 10 + &lt;/button&gt;</code></pre>
+              <p class="code-info">We can create a new array, $results, that will hold the final results of the search that will be sent back to the client. To store results into that array, we will first create an iterator variable, $count, that will start at value
+              0 and loop through the size of the $star_data array. For each iteration, $name will be checked to see if it can be found within the ['name'] attribute of the star object, and if so, the star object will be pushed to the $results
+              array. If not, it is skipped. <a class="link" href="http://php.net/manual/en/function.stripos.php" target="_blank">stripos</a> is used to find an occurance of the value of $name within the ['name'].</p>
 
-                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+              <p class="code-info">And finally, the data is returned to the client in JSON format to be read by the client: </p>
 
-                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+              <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
 
-                        <!-- ajax -->
-                        <h5>Ajax</h5>
+              <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+              </div>
+            <!-- SEARCH BY NAME -->
+            <button id="searchByName" class="accordion">search by name</button>
+            <div class="panel">
+            <!-- HTML -->
+            <h4>HTML</h4>
+            <p class="code-info">The user can select a distance filter from three available buttons: </p>
 
-                        <p class="code-info">The ajax functions for the distance filtering is identical to the search function, except for the sources of the data that is to be sent to the server. The data to be sent is the value that is stored within each button: 5, 10 and
-                            15. Each function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onclick.asp" target="_blank">onclick</a> event. Once again, JQuery is needed to make the $.ajax call: </p>
+            <pre><code>&lt;button id=&quot;star_distance_one&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_one&quot; type=&quot;button&quot; value=&quot;5&quot; onclick=&quot;getStarsByDistanceFilterOne();&quot;&gt; &lt; 5 &lt;/button&gt;<br/>&lt;button id=&quot;star_distance_two&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_two&quot; type=&quot;button&quot; value=&quot;10&quot; onclick=&quot;getStarsByDistanceFilterTwo();&quot;&gt; 5 - 10 &lt;/button&gt;<br/>&lt;button id=&quot;star_distance_three&quot; class=&quot;btn btn-primary&quot; name=&quot;star_distance_three&quot; type=&quot;button&quot; value=&quot;15&quot; onclick=&quot;getStarsByDistanceFilterThree();&quot;&gt; 10 + &lt;/button&gt;</code></pre>
 
-                        <pre><code>function getStarsByDistanceFilterOne() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_distance_one=" + $('#star_distance_one').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+            <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
 
-                        <p class="code-info">Once again, the star's name, distance and constellation will be outputted within a div that is appended to #star_results. Only those that "fit" the filter will be appended, as determined by a function within the server file, below.
-                            Also, function getStarsByDistanceFilterTwo (between 5 - 10) and getStarsByDistanceFilterThree (10+ ) have the same ajax call, only changing the button ids, star_distance_two and star_distance_three respectively.</p>
+            <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
 
-                        <!-- server -->
-                        <h5>Server</h5>
+            <!-- AJAX/JQuery -->
+            <h4>Ajax/JQuery</h4>
 
-                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but new varaibles must be created: </p>
+            <p class="code-info">The ajax functions for the distance filtering is identical to the search function, except for the sources of the data that is to be sent to the server. The data to be sent is the value that is stored within each button: 5, 10 and
+            15. Each function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onclick.asp" target="_blank">onclick</a> event. Once again, JQuery is needed to make the $.ajax call: </p>
 
-                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [2.] Star distance<br />$distance_one = $_POST['star_distance_one'];<br />$distance_two = $_POST['star_distance_two'];<br />$distance_three = $_POST['star_distance_three'];</code> </pre>
+            <pre><code>function getStarsByDistanceFilterOne() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_distance_one=" + $('#star_distance_one').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
 
-                        <p class="code-info">Three for loops are used to compare each distance attribute of the star object within the array to designated filter values: </p>
+            <p class="code-info">Once again, the star's name, distance and constellation will be outputted within a div that is appended to #star_results. Only those that "fit" the filter will be appended, as determined by a function within the server file, below.
+            Also, function getStarsByDistanceFilterTwo (between 5 - 10) and getStarsByDistanceFilterThree (10+ ) have the same ajax call, only changing the button ids, star_distance_two and star_distance_three respectively.</p>
 
-                        <pre><code>// results array<br />$results = array();<br /><br />// distance filters <br />$distance_far = 5; <br />$distance_farther = 10;<br /> $distance_farthest = 15;<br/><br/>// &lt;5 filter selected... <br/>if ($distance_one == $distance_far) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &lt;= $distance_far ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;}<br/> } <br/><br/>// 5 - 10 filter selected... <br/>if ($distance_two == $distance_farther) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &lt;= $distance_farther &amp;&amp; $star_data[$count]['distance'] &gt;= $distance_far ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;} <br/>} <br/><br/>// 10+ filter selected... <br/>if ($distance_three == $distance_farthest) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &gt;= $distance_farther ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;} <br/>}</code> </pre>
+            <!-- PHP -->
+            <h4>PHP</h4>
 
-                        <p class="code-info">The results are stored into $results and encoded in JSON before being appended to the id star_results:</p>
+            <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but new varaibles must be created: </p>
 
-                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+            <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [2.] Star distance<br />$distance_one = $_POST['star_distance_one'];<br />$distance_two = $_POST['star_distance_two'];<br />$distance_three = $_POST['star_distance_three'];</code> </pre>
 
-                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                    </div>
+            <p class="code-info">Three for loops are used to compare each distance attribute of the star object within the array to designated filter values: </p>
 
-                <!-- SEARCH BY LETTER -->
-                <button id="searchByLetter" class="accordion">search by letter</button>
-                    <div class="panel">
+            <pre><code>// results array<br />$results = array();<br /><br />// distance filters <br />$distance_far = 5; <br />$distance_farther = 10;<br /> $distance_farthest = 15;<br/><br/>// &lt;5 filter selected... <br/>if ($distance_one == $distance_far) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &lt;= $distance_far ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;}<br/> } <br/><br/>// 5 - 10 filter selected... <br/>if ($distance_two == $distance_farther) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &lt;= $distance_farther &amp;&amp; $star_data[$count]['distance'] &gt;= $distance_far ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;} <br/>} <br/><br/>// 10+ filter selected... <br/>if ($distance_three == $distance_farthest) { <br/>&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br/>&#09;&#09;if( $star_data[$count]['distance'] &gt;= $distance_farther ) { <br/>&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br/>&#09;&#09;} <br/>&#09;} <br/>}</code> </pre>
 
-                        <!-- client -->
-                        <h5>Client</h5>
-                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
-                            select tag:</p>
+            <p class="code-info">The results are stored into $results and encoded in JSON before being appended to the id star_results:</p>
 
-                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
+            <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
 
-                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+            <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+            </div>
+            <!-- SEARCH BY CLASS -->
+            <button id="searchByClass" class="accordion">search by class</button>
+            <div class="panel">
 
-                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+            <!-- HTML -->
+            <h4>HTML</h4>
+            <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
+            select tag:</p>
 
-                        <!-- ajax -->
-                        <h5>Ajax</h5>
+            <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
 
-                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
-                            is triggered.</p>
+            <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
 
-                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+            <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
 
-                        <!-- server -->
-                        <h5>Server</h5>
+            <!-- AJAX/JQuery -->
+            <h4>Ajax/JQuery</h4>
 
-                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
-                            </p>
+            <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
+            is triggered.</p>
 
-                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
+            <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
 
-                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
-                            a for loop to find matches: </p>
+            <!-- PHP -->
+            <h4>PHP</h4>
 
-                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
+            <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
+            </p>
 
-                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
+            <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
 
-                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+            <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
+            a for loop to find matches: </p>
 
-                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                    </div>
+            <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
 
-                <!-- SEARCH BY COMPOSITION -->
-                <button id="searchByComposition" class="accordion">search by composition</button>
-                    <div class="panel">
+            <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
 
-                        <!-- client -->
-                        <h5>Client</h5>
-                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
-                            select tag:</p>
+            <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
 
-                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
+            <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+            </div>
+            <!-- SEARCH BY MOHS -->
+            <button id="searchByMohs" class="accordion">search by mohs</button>
+            <div class="panel">
 
-                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
+            <!-- HTML -->
+            <h4>HTML</h4>
+            <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
+            select tag:</p>
 
-                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
+            <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
 
-                        <!-- ajax -->
-                        <h5>Ajax</h5>
+            <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
 
-                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
-                            is triggered.</p>
+            <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
 
-                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
+            <!-- AJAX/JQuery -->
+            <h4>Ajax/JQuery</h4>
 
-                        <!-- server -->
-                        <h5>Server</h5>
+            <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
+            is triggered.</p>
 
-                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
-                            </p>
+            <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
 
-                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
+            <!-- PHP -->
+            <h4>PHP</h4>
 
-                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
-                            a for loop to find matches: </p>
+            <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
+            </p>
 
-                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
+            <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
 
-                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
+            <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
+            a for loop to find matches: </p>
 
-                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
+            <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
 
-                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                    </div>
+            <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
 
-                <!-- SEARCH BY CLASS -->
-                <button id="searchByClass" class="accordion">search by class</button>
-                    <div class="panel">
+            <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
 
-                        <!-- client -->
-                        <h5>Client</h5>
-                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
-                            select tag:</p>
+            <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+            </div>
 
-                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
-
-                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
-
-                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
-
-                        <!-- ajax -->
-                        <h5>Ajax</h5>
-
-                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
-                            is triggered.</p>
-
-                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
-
-                        <!-- server -->
-                        <h5>Server</h5>
-
-                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
-                            </p>
-
-                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
-
-                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
-                            a for loop to find matches: </p>
-
-                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
-
-                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
-
-                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
-
-                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                    </div>
-
-                <!-- SEARCH BY COLOR -->
-                <button id="searchByColor" class="accordion">search by color</button>
-                    <div class="panel">
-
-                        <!-- client -->
-                        <h5>Client</h5>
-                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
-                            select tag:</p>
-
-                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
-
-                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
-
-                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
-
-                        <!-- ajax -->
-                        <h5>Ajax</h5>
-
-                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
-                            is triggered.</p>
-
-                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
-
-                        <!-- server -->
-                        <h5>Server</h5>
-
-                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
-                            </p>
-
-                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
-
-                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
-                            a for loop to find matches: </p>
-
-                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
-
-                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
-
-                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
-
-                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                    </div>
-
-                <!-- SEARCH BY FRACTURE -->
-                <button id="searchByFracture" class="accordion">search by fracture</button>
-                  <div class="panel">
-
-                      <!-- client -->
-                      <h5>Client</h5>
-                      <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
-                          select tag:</p>
-
-                      <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
-
-                      <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
-
-                      <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
-
-                      <!-- ajax -->
-                      <h5>Ajax</h5>
-
-                      <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
-                          is triggered.</p>
-
-                      <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
-
-                      <!-- server -->
-                      <h5>Server</h5>
-
-                      <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
-                          </p>
-
-                      <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
-
-                      <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
-                          a for loop to find matches: </p>
-
-                      <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
-
-                      <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
-
-                      <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
-
-                      <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                  </div>
-
-                  <!-- SEARCH BY MOHS -->
-                  <button id="searchByMohs" class="accordion">search by mohs</button>
-                    <div class="panel">
-
-                        <!-- client -->
-                        <h5>Client</h5>
-                        <p class="code-info">Available constellations are selected by a dropdown and once an option is selected, a function is triggered by an <a class="link" href="http://www.w3schools.com/jsref/event_onchange.asp" target="_blank">onchange</a> event on the
-                            select tag:</p>
-
-                        <pre><code>&lt;h4&gt;constellation where star belongs&lt;/h4&gt; <br/>&lt;select id=&quot;star_constellation&quot; class=&quot;star_constellation form-control&quot; onChange=&quot;getStarsByConstellation();&quot;&gt; <br/>&#09;&lt;option value=&quot;&quot; name=&quot;&quot; class=&quot;&quot;&gt;-- Select --&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Andromeda&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Andromeda&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Aquarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Aquarius&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Canis Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Major&lt;/option&gt;<br/> &#09;&lt;option value=&quot;Canis Minor&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Canis Minor&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Centaurus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Centaurus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Cetus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Cetus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Eridanus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Eridanus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Leo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Leo&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Ophiuchus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ophiuchus&lt;/option&gt;<br/>&#09; &lt;option value=&quot;Piscis Austrinus&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Piscis Austrinus&lt;/option&gt; <br/>&#09;&lt;option value=&quot;Sagittarius&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Sagittarius&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Ursa Major&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Ursa Major&lt;/option&gt;<br/>&#09;&lt;option value=&quot;Virgo&quot; name=&quot;constellation&quot; class=&quot;constellation&quot;&gt;Virgo&lt;/option&gt;<br/> &lt;/select&gt;</code></pre>
-
-                        <p class="code-info">The results of the search will be appended to a paragraph tag below the input field using <a class="link" href="http://api.jquery.com/html/" target="_blank">.html( )</a>:</p>
-
-                        <pre><code>&lt;p id="star_results"&gt;See results here.&lt;/p&gt;</code></pre>
-
-                        <!-- ajax -->
-                        <h5>Ajax</h5>
-
-                        <p class="code-info">Function getStarsByConstellation() collects the value (constellation name) of the option that is selected from the dropdown list. When the user selects his/her first option or selects a new option, the onchange Javascript event
-                            is triggered.</p>
-
-                        <pre><code>function getStarsByConstellation() { <br />&#09;$.ajax({<br />&#09;&#09;url: "/server.php", // receiving URL<br />&#09;&#09;type: "POST", // POST request<br />&#09;&#09;data: "star_constellation=" + $('#star_constellation').val(), // data is formed by the value of the id 'star_name'<br />&#09;&#09;dataType: "json", // data is sent/received in JSON format<br />&#09;&#09;success: function (response, status, http) { // if successful... <br />&#09;&#09;&#09;console.log(response);<br />&#09;&#09;&#09; var results = ''; // form a string to append to the &lt;p&gt; with id 'star_results' <br />&#09;&#09;&#09;$.each (response, function(index, item) { // for each item, find the name, distance and constellation and add to results<br />&#09;&#09;&#09;&#09;results = results + "&lt;div&gt;Name: " + item.name + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "Distance: " + item.distance + "&lt;br/&gt;"; <br />&#09;&#09;&#09;&#09;results = results + "Constellaton: " + item.constellation + "&lt;br/&gt;";<br />&#09;&#09;&#09;&#09;results = results + "&lt;/div&gt;";<br />&#09;&#09;&#09;});<br />&#09;&#09;&#09;$('#star_results').html(results); // append with results to the &lt;p&gt;<br />&#09;&#09;}, <br />&#09;&#09;error: function (http, status, error) { // if there's an error, show user<br />&#09;&#09;&#09;alert("Error: " + error);<br />&#09;&#09;}<br />&#09;});<br />}</code></pre>
-
-                        <!-- server -->
-                        <h5>Server</h5>
-
-                        <p class="code-info">The contents of the array $star_data remains the same. Also, data is received the same way, but a new varaible must be created to store the selected option within <span style="color:#9d8186;">server.php </span>server.php</span>:
-                            </p>
-
-                        <pre><code>// receive the data from client<br />$data = $_REQUEST; // store the data retrieved from ajax call<br /><br />// [3.] Star constellation<br />$constellation = $_POST['star_constellation'];</code> </pre>
-
-                        <p class="code-info">Results are stored in the $results array after the $constellation value is matched to each star object's constellation attrbute ['constellation']. First, we need to check that $constellation is not null, and if it's not, we use
-                            a for loop to find matches: </p>
-
-                        <pre><code>if ($constellation != null) { <br />&#09;for( $count = 0 ; $count &lt; count( $star_data ) ; $count++ ) { <br />&#09;&#09;if( stripos( $star_data[$count]['constellation'] , $constellation ) !== false ) { <br />&#09;&#09;&#09;array_push( $results , $star_data[$count] ); <br />&#09;&#09;} <br />&#09;} <br />}</code> </pre>
-
-                        <p class="code-info">Finally, the matched results are JSON encoded and returned to the client: </p>
-
-                        <pre><code>// return response as JSON<br />echo json_encode( $results);</code></pre>
-
-                        <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
-                    </div>
-                </div>
+            <div class="spacer"></div>
             </div>
         </div>
     </div>
@@ -1131,7 +964,7 @@
           <h4>Mineral Data</h4>
           <ul class="sources-list">
             <li>
-                <a class="link-sources" href="http://www.sandatlas.org/composition-of-the-earths-crust/" target="_blank">Composition of the crust</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.sandatlas.org/about-2/" target="_blank">© Siim Sepp</a> <span style="color: #f4f3ee;"> - Statistics about the composition of the Earth. </span>
+              <a class="link-sources" href="http://www.sandatlas.org/composition-of-the-earths-crust/" target="_blank">Composition of the crust</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.sandatlas.org/about-2/" target="_blank">© Siim Sepp</a> <span style="color: #f4f3ee;"> - Statistics about the composition of the Earth. </span>
             </li>
             <li>
               <a class="link-sources" href="http://www.universetoday.com/111586/how-life-could-have-caused-most-minerals-on-earth/" target="_blank">How Life Could Have Produced Most Minerals On Earth</a> <span style="color: #f4f3ee;">by </span><a class="link-sources" href="http://www.universetoday.com/author/pars3c/" target="_blank">Elizabeth Howell (© Universe Today, December 23, 2015)</a> <span style="color: #f4f3ee;"> - In-depth article about how minerals were produced on Earth. </span>
@@ -1190,6 +1023,7 @@
           </ul>
         </div>
       </div>
+      <div class="spacer"></div>
     </div>
   </div>
 
