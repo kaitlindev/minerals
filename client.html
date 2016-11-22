@@ -749,6 +749,7 @@
 
             <div class="clearfix"></div>
             <hr class="hr-divider" />
+            <div id="top"></div>
             <div class="clearfix"></div>
 
             <!-- how it works -->
@@ -798,10 +799,12 @@
 
               <p class="code-info">Using <a class="link" href="http://php.net/manual/en/mysqli-result.fetch-array.php" target="_blank">mysqli_fetch_array()</a>, each hit from the query will be stored in its own row. These rows are stored in an array that can be traversed and printed out while following the structure that was set forth by the table header. So for each row, the name, group, class, color, mohs, fracture and cleavage will be displayed as corresponding to the table header above. The rows are fetched by: </p>
 
-              <pre><code>while($row = mysqli_fetch_array($show)) { <br />&#09;echo &quot;&lt;tr&gt;&lt;td&gt;&lt;p style='font-size: 12px; color: #e0c7b0;'&gt;&quot;<br />&#09; . $row['name'] .<br />&#09; &quot;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;. $row['group'] .<br />&#09; &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;. $row['class'] . <br />&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; . $row['color'] . &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; . $row['mohs'] . &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; . $row['fracture'] . &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; . $row['cleavage'] . &quot;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&quot;; } echo &quot;&lt;/table&quot;; }</code> </pre>
+              <pre><code><br />&#09;while($row = mysqli_fetch_array($show)) { <br />&#09;&#09;echo &quot;&lt;tr&gt;&lt;td&gt;&lt;p style='font-size: 12px; color: #e0c7b0;'&gt;&quot;<br />&#09;&#09; . $row['name'] .<br />&#09; &#09;&quot;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['group'] .<br />&#09;&#09; &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['class'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['color'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['mohs'] .<br />&#09;&#09; &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['fracture'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['cleavage'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&quot;; <br />&#09;} <br />&#09;echo &quot;&lt;/table&quot;; <br />}</code> </pre>
 
+              <p class="code-info">As long as there exists another row of the query results to access, it will be echoed out and appended to the #content div. Whenever a search is initialized , the table will be replaced with the results of the new query. After the query is finished, the connection to the database can be closed using <a class="link" href="http://php.net/manual/en/mysqli.close.php" target="_blank">mysqli_close()</a>.</p>
 
               <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
+
               </div>
             <!-- SEARCH BY NAME -->
             <button id="searchByName" class="accordion">search by name</button>
