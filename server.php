@@ -108,7 +108,7 @@ if ($mineral_id != null) {
 ******************** SEARCH NAME ******************
 ****************************************************/
 if ($mineral_name != null) {
-  $query = "SELECT * FROM minerals WHERE name LIKE '%$mineral_name%'"; 
+  $query = "SELECT * FROM minerals WHERE name LIKE '%$mineral_name%'";
   $show = mysqli_query($con, $query) or die ("Error");
   echo $tableHeaderColor;
 
@@ -136,7 +136,7 @@ echo "</table";
 *********** SEARCH LETTER ******************
 ****************************************************/
 if ($mineral_letter != null) {
-  $query = "SELECT * FROM minerals WHERE name LIKE '$mineral_letter%'"; // '%es%';
+  $query = "SELECT * FROM minerals WHERE name LIKE '$mineral_letter%'";
   $show = mysqli_query($con, $query) or die ("Error");
   echo $tableHeaderColor;
 
@@ -164,7 +164,7 @@ echo "</table";
 *********** SEARCH COMPOSITION ******************
 ****************************************************/
 if ($mineral_composition!= null) {
-  $query = "SELECT * FROM minerals WHERE composition LIKE '%$mineral_composition%'"; // '%es%';
+  $query = "SELECT * FROM minerals WHERE composition LIKE '%$mineral_composition%'"; 
   $show = mysqli_query($con, $query) or die ("Error");
   echo $tableHeaderComposition;
 
