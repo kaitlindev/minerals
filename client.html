@@ -837,11 +837,9 @@
 
                 <pre><code>$tableHeaderColor = &quot;&lt;table class='table-condensed'&gt; <br />&#09;&lt;tr&gt;<br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Name&lt;/td&gt;<br />&#09;&#09; &lt;td style='background:#f4f3ee; color: black;'&gt;Group&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Class&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Color&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Mohs&lt;/td&gt;<br />&#09;&#09; &lt;td style='background:#f4f3ee; color: black;'&gt;Fracture&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Cleavage&lt;/td&gt; <br />&#09;&lt;/tr&gt;&quot;;</code></pre>
 
-                <p class="code-info">The query for the mineral name uses the LIKE keyword: </p>
-
                 <pre><code>if ($mineral_name != null) { <br />&#09;$query = &quot;SELECT * FROM minerals WHERE name LIKE '%$mineral_name%'&quot;;<br />&#09;$show = mysqli_query($con, $query) or die (&quot;Error&quot;); <br />&#09;echo $tableHeaderColor;</code> </pre>
 
-                <p class="code-info">The value of $mineral_name will remain null unless there exist characters within the input field AND the user also clicked the "Search" button. Even if the user does not enter any text into the input field and clicks "Search", the value will still remain null. Only when the value becomes non-null will the query be used. The query is stored in $query and $show holds the result of that query using the database connection that was opened, $con. Once more, the table header is echoed before the actual results are displayed in order to form a table. </p>
+                <p class="code-info">The query for the mineral name uses the LIKE keyword. The value of $mineral_name will remain null unless there exist characters within the input field AND the user also clicked the "Search" button. Even if the user does not enter any text into the input field and clicks "Search", the value will still remain null. Only when the value becomes non-null will the query be used. The query is stored in $query and $show holds the result of that query using the database connection that was opened, $con. Once more, the table header is echoed before the actual results are displayed in order to form a table. </p>
 
                 <p class="code-info">This structure of query (involving LIKE and containing a wild card character) is also how the mineral database is searched for by letter and chemical composition. </p>
 
@@ -931,35 +929,37 @@
                 <!-- AJAX/JQuery -->
                 <h4>Ajax/JQuery</h4>
 
-                <p class="code-info">The JQuery UI Slider is initialized by the <a class="link" href="https://www.tutorialspoint.com/jqueryui/jqueryui_slider.htm" target="_blank">.slider()</a> function. </p>
+                <p class="code-info">The JQuery UI Slider is initialized by the <a class="link" href="https://www.tutorialspoint.com/jqueryui/jqueryui_slider.htm" target="_blank">.slider()</a> function. On document ready, when the slider is moved, two functions are called simultaneously: one to update the value that is shown in the input field and one that searches the minerals database. These two functions are called within the .slider() function when triggered by a slide event.  For example, if the slider is moved to 4, the input field shows 4 while all minerals that have a mohs score of 4 will be shown within #content, resulting in a seamless UI experience. </p>
 
+                <pre><code>$(document).ready(function() { <br />&#09;$(&quot;#slider&quot;).slider({ <br />&#09;&#09;min: 0, <br />&#09;&#09;max: 11, <br />&#09;&#09;slide: function(event, ui) { <br />&#09;&#09;&#09;update(); <br />&#09;&#09;&#09;search_mohs(); <br />&#09;&#09;} <br />&#09;});<br />&#09; update(); <br />&#09;search_mohs(); <br />});</code></pre>
 
+                <p class="code-info">The .slider() function is called on the div containing the slider element, #slider. The minimum value that the slider can be set to is 0. This way, the slider can start at 0 as the default. This makes it easy for the user to select what value that he/she desires without immediately querying the database (as apposed to if the slider started at value 1). The max slider value is 10 because that is the largest mohs value on the scale. On .slide(), update(); and search_mohs(); is called.</p>
 
+                <p class="code-info">First, we will take a look at update() to see how the value in the input field is updated: </p>
 
+                <pre><code>function update() { <br />&#09;$sliderAmount = $(&quot;#slider&quot;).slider(&quot;values&quot;, 0); <br />&#09;$(&quot;#amount&quot;).val($sliderAmount); <br />}</code></pre>
 
-                <p class="code-info">In this function, in order to get the correct value of the color button that was clicked, we make use of the <a class="link" href="http://html-tuts.com/jquery-this-selector/" target="_blank">$(this)</a> selector. This allows only the value of the button that was clicked to be saved. This color value is then passed to the AJAX call.</p>
+                <p class="code-info">The variable $sliderAmount stores the current value of the slider at any exact moment with a default value of 0. We store this value into the input field (#amount) using .val(). </p>
 
-                <pre><code>$(document).ready(function() { <br />&#09;$(&quot;.color&quot;).click(function() {<br />&#09;&#09; var color= $(this).attr(&quot;value&quot;);<br />&#09;&#09;&#09;function search_color() { <br />&#09;&#09;&#09;$.ajax({ <br />&#09;&#09;&#09;&#09;type: &quot;POST&quot;, <br />&#09;&#09;&#09;&#09;url: &quot;server.php&quot;, <br />&#09;&#09;&#09;&#09;data: {mineral_color: color}, <br />&#09;&#09;&#09;&#09;success: function(data) { <br />&#09;&#09;&#09;&#09;&#09;$(&quot;#content&quot;).html(data); <br />&#09;&#09;&#09;&#09;}<br />&#09;&#09;&#09;  });<br />&#09;&#09; } <br />&#09;&#09;search_color(); <br />&#09;}); <br />});<br /></code></pre>
+                  <p class="code-info">The search_mohs() function contains the AJAX call needed to send the mohs value to the PHP script: </p>
+
+                  <pre><code>function search_mohs() { <br />&#09;$.ajax({ <br />&#09;&#09;type: &quot;POST&quot;, <br />&#09;&#09;url: &quot;server.php&quot;, <br />&#09;&#09;data: {mineral_mohs: $sliderAmount}, <br />&#09;&#09;success: function(data) { <br />&#09;&#09;&#09;$(&quot;#content&quot;).html(data); <br />&#09;&#09;} <br />&#09;});<br /> }</code></pre>
+
+                  <p class="code-info">On success of $.ajax, $sliderAmount is the data that is sent to server.php. Results are appended to #content when completed. </p>
 
                 <!-- PHP -->
                 <h4>PHP</h4>
-                <p class="code-info">Once again, the connection to the database must be established using <a class="link" href="http://php.net/manual/en/function.mysqli-connect.php" target="_blank">mysqli_connect()</a>. If successful, we can contine to build our table to show the results and write our query. <a class="link" href="http://php.net/manual/en/reserved.variables.post.php" target="_blank">$_POST</a> is used to store the value of color into $mineral_color: </p>
+                <p class="code-info">After the connection to the MySQL database is opened, <a class="link" href="http://php.net/manual/en/reserved.variables.post.php" target="_blank">$_POST</a> is used to store the mohs value. </p>
 
-                <pre><code>$mineral_color = $_POST[&quot;mineral_color&quot;];</code></pre>
+                <pre><code>$mineral_mohs = $_POST[&quot;mineral_mohs&quot;];</code></pre>
 
-                <p class="code-info">The same table header will be used again for simplicity:</p>
+                <p class="code-info">The table header is still the same: </p>
 
                 <pre><code>$tableHeaderColor = &quot;&lt;table class='table-condensed'&gt; <br />&#09;&lt;tr&gt;<br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Name&lt;/td&gt;<br />&#09;&#09; &lt;td style='background:#f4f3ee; color: black;'&gt;Group&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Class&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Color&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Mohs&lt;/td&gt;<br />&#09;&#09; &lt;td style='background:#f4f3ee; color: black;'&gt;Fracture&lt;/td&gt; <br />&#09;&#09;&lt;td style='background:#f4f3ee; color: black;'&gt;Cleavage&lt;/td&gt; <br />&#09;&lt;/tr&gt;&quot;;</code></pre>
 
-                <p class="code-info">The LIKE operator is not used here in this query. Instead, the color can be searched for by itself  without any wildcards since the button value should exactly match a color that is found in the database. There is only one way to spell each color, so there is no need to search for patterns. It is necessary to check that $mineral_color != null because it will always remain null unless a button with the .color class is clicked. </p>
+                <p class="code-info">This query is written in the same way that the color, class and fracture query is written. The variable $mineral_mohs is by default null unless the slider is moved, so that must be checked first since the query is not used unless $mineral_mohs is non-null. </p>
 
-                <pre><code>if ($mineral_color != null) { <br />&#09;$query = &quot;SELECT * FROM minerals WHERE color = '$mineral_color'&quot;;<br />&#09;$show = mysqli_query($con, $query) or die (&quot;Error&quot;); <br />&#09;echo $tableHeaderColor;</code> </pre>
-
-                <p class="code-info">Again, <a class="link" href="http://php.net/manual/en/mysqli-result.fetch-array.php" target="_blank">mysqli_fetch_array()</a> is used to store the results by row. The same seven columns will be printed out within the table: name, group, class, color, mohs, fracture and cleavage. Only the minerals that have the color that is searched for will be displayed. </p>
-
-                <pre><code><br />&#09;while($row = mysqli_fetch_array($show)) { <br />&#09;&#09;echo &quot;&lt;tr&gt;&lt;td&gt;&lt;p style='font-size: 12px; color: #e0c7b0;'&gt;&quot;<br />&#09;&#09; . $row['name'] .<br />&#09; &#09;&quot;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['group'] .<br />&#09;&#09; &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['class'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['color'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['mohs'] .<br />&#09;&#09; &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['fracture'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['cleavage'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&quot;; <br />&#09;} <br />&#09;echo &quot;&lt;/table&quot;; <br />}</code> </pre>
-
-                <p class="code-info">The contents of the while loop do not change from previous examples. Once the results are all appended, the database connection can be closed.</p>
+                <pre><code>if ($mineral_mohs != null) { <br />&#09;$query = &quot;SELECT * FROM minerals WHERE mohs = '$mineral_mohs'&quot;;<br />&#09;$show = mysqli_query($con, $query) or die (&quot;Error&quot;); <br />&#09;echo $tableHeaderColor;<br />&#09;while($row = mysqli_fetch_array($show)) { <br />&#09;&#09;echo &quot;&lt;tr&gt;&lt;td&gt;&lt;p style='font-size: 12px; color: #e0c7b0;'&gt;&quot;<br />&#09;&#09; . $row['name'] .<br />&#09; &#09;&quot;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['group'] .<br />&#09;&#09; &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['class'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['color'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['mohs'] .<br />&#09;&#09; &quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['fracture'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p style='font-size: 12px;'&gt;&quot; <br />&#09;&#09;. $row['cleavage'] . <br />&#09;&#09;&quot;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&quot;; <br />&#09;} <br />&#09;echo &quot;&lt;/table&quot;; <br />}</code> </pre>
 
                 <a id="topButton" class="btn btn-default page-scroll" href="#top" role="button">back to top</a>
                 <br />
