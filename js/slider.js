@@ -27,7 +27,6 @@
             search_mohs();
         }
     });
-
     update();
     search_mohs();
 });
