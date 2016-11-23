@@ -2,7 +2,7 @@
 
 Small-scale app that demonstrates how PHP can interact with a MySQL database with the help of Ajax and JQuery.
 
-* Last modified: November 22nd, 2016.
+* Last modified: November 23nd, 2016.
 * URL: http://kiddography.com/projects/minerals-app/client.html
 * { HTML/CSS, Bootstrap, PHP, JavaScript, JQuery, AJAX, MySQL }
 
@@ -28,7 +28,7 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 
 
 ## **PENDING** ##
-* Add "Code" section.
+* ~~Add "Code" section.~~
 * ~~Make responsive.~~
 * ~~Clean up scripts.~~
 * ~~Add entries to database.~~
