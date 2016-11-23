@@ -15,6 +15,7 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 * [Glyphicons](http://glyphicons.com/) - © Jan Kovarik
 * [Default Sizes for Twitter Bootstrap’s Media Queries](https://scotch.io/tutorials/default-sizes-for-twitter-bootstraps-media-queries) - © Mar 04, 2014, Nicholas Cerminara (Scotch.io).
 * [Device Media Queries](http://resizr.co/) - © Piers Rueb
+* [HTML Entities Encoder / Decoder ](http://www.web2generators.com/html-based-tools/online-html-entities-encoder-and-decoder) - © IBE Software (2016)
 
 
 ### JavaScript/JQuery: ###
