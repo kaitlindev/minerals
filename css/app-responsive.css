@@ -1028,19 +1028,17 @@
 
  .first-blurb {
      float:left;
-     padding-right: 20px;
-     padding-left: 120px;
-     padding-bottom: 20px;
+     padding-left: 45px;
  }
 
  .second-blurb {
      float:left;
-     padding-right: 20px;
+     padding-left: 45px;
  }
 
  .third-blurb {
      float:left;
-     padding-right: 20px;
+     padding-left: 45px;
  }
 
  .definition-blurb {
