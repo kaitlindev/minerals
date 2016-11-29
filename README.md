@@ -4,7 +4,7 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 
 * Last modified: November 23rd, 2016.
 * URL: http://kiddography.com/projects/minerals-app/client.html
-* { HTML/CSS, Bootstrap, PHP, JavaScript, JQuery, AJAX, MySQL }
+* Languages: HTML/CSS, Bootstrap, PHP, JavaScript, JQuery, AJAX, MySQL
 
 ## **SOURCES** ##
 
