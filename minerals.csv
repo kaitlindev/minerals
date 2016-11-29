@@ -1,0 +1,93 @@
+id,name,composition,group,class,color,mohs,fracture,cleavage,tenacity
+1,Antimony,Sb,Non-silicate,Native Element,Grey,3,Irregular,Perfect,Brittle
+2,Acanthite,Ag2S,Non-silicate,Sulfide,Black,2,Sub-Conchoidal,None,Sectile
+3,Adamite,Zn2AsO4OH,Non-silicate,Arsenate,Multiple,3.5,Conchoidal,Distinct,Very brittle
+4,Albite,NaAlSi3O8,Silicate,Tectosilicate,Multiple,6,Conchoidal,Perfect,Brittle
+5,Alunite,KAl3(SO4)2(OH)6,Silicate,Sulfate,Multiple,3.5,Conchoidal,Distinct,Brittle
+6,Azurite,Cu3(CO3)2(OH)2,Non-silicate,Carbonate,Blue,3.5,Conchoidal,Perfect,Brittle
+7,Augite,"(Ca,Na)(Mg,Fe,Al,Ti)(Si,Al)2O6",Silicate,Inosilicate,Multiple,5.5,Sub-Conchoidal,Distinct,Brittle
+8,Arsenic,As,Non-silicate,Native Element,Grey,3.5,Irregular,Perfect,Brittle
+9,Barite,BaSO4,Non-silicate,Sulfate,Multiple,3,Irregular,Perfect,Brittle
+10,Beryl,Be3Al2(Si O3)6,Silicate,Cyclosilicate,Multiple,7.5,Conchoidal,Fair,Brittle
+11,Biotite,"K(Mg,Fe) 3(AlSi 3O 10)(F,OH)2",Silicate,Phyllosilicate,Brown,2.5,Micaceous,Perfect,Semiflexible
+12,Brazilianite,NaAl3(PO4)2(OH)4,Non-silicate,Phosphate,Yellow,5.5,Conchoidal,Distinct,Brittle
+13,Brochantite,Cu4SO4(OH)6,Non-silicate,Sulfate,Green,3.5,Conchoidal,Perfect,Brittle
+14,Brucite,Mg(OH)2,Non-silicate,Oxide,Multiple,2.5,Micaceous,Perfect,Sectile
+15,Bustamite,CaMn2+Si2O6,Silicate,Inosilicate,Pink,5.5,Irregular,Perfect,Brittle
+16,Calcite,CaCO3,Non-silicate,Carbonate,Multiple,3,Conchoidal,Perfect,Brittle
+17,Carrollite,CuCo2S4,Non-silicate,Sulfide,Grey,4.5,Conchoidal,None,Very brittle
+18,Celestine,SrSO4,Non-silicate,Sulfate,Colorless,3,Irregular,Perfect,Brittle
+19,Chalcopyrite,CuFeS2,Non-silicate,Sulfide,Yellow,3.5,Irregular,Poor,Brittle
+20,Chondrodite,Mg5(SiO4)2F2,Silicate,Nesosilicate,Multiple,6,Conchoidal,Poor,Brittle
+21,Clinozoisite,Ca2Al3(Si2O7)(SiO4)O(OH),Silicate,Sorosilicate,Multiple,7,Irregular,Perfect,Brittle
+22,Covellite,CuS,Non-silicate,Sulfide,Blue,1.5,Irregular,Perfect,Flexible
+23,Cuspidine,"Ca4(Si2O7)(F,OH)2",Silicate,Sorosilicate,Multiple,5,Irregular,Distinct,Brittle
+24,Danburite,CaB2(SiO4)2,Silicate,Tectosilicate,Yellow,7,Sub-Conchoidal,Poor,Brittle
+25,Diaboleite,Pb2CuCl2(OH)4,Non-silicate,Halide,Blue,2.5,Conchoidal,Perfect,Brittle
+26,Diamond,C,Non-silicate,Native Element,Colorless,10,Irregular,Perfect,Brittle
+27,Dioptase,CuSiO2(OH)2,Silicate,Cyclosilicate,Green,5,Conchoidal,Perfect,Brittle
+28,Dolomite,CaMg(CO3)2,Non-silicate,Carbonate,Multiple,3.5,Sub-Conchoidal,Perfect,Brittle
+29,Dumortierite,Al7(BO3)(SiO4)3O3,Silicate,Nesosilicate,Multiple,7,Fibrous,Distinct,Brittle
+30,Edenite,NaCa2Mg5(Si7Al)O22(OH)2,Silicate,Inosilicate,Multiple,5,Conchoidal,Perfect,Brittle
+31,Elbaite,"Na(Li,Al)3Al6(BO3)3Si6O18(OH)4",Silicate,Cyclosilicate,Multiple,7.5,Conchoidal,Poor,Brittle
+32,Epsomite,MgSO4+7H2O,Non-silicate,Sulfate,Multiple,2,Conchoidal,Perfect,Fragile
+33,Euclase,BeAlSiO4(OH),Silicate,Nesosilicate,Multiple,7.5,Conchoidal,Perfect,Brittle
+34,Fluorapatite,Ca5(PO4)3F,Non-silicate,Phosphate,Multiple,5,Conchoidal,Poor,Brittle
+35,Foitite,"Fe2(Al,Fe)]Al6Si6O18(BO3)(OH)",Silicate,Cyclosilicate,Purple,7,Conchoidal,None,Brittle
+36,Forsterite,Mg2SiO4,Silicate,Nesosilicate,Multiple,7,Conchoidal,Perfect,Brittle
+37,Frondelite,Mn2+Fe43+(PO4)3(OH)5,Non-silicate,Phosphate,Multiple,4.5,Fibrous,Very Good,Brittle
+38,Gahnite,ZnAl2O4,Non-silicate,Oxide,Multiple,7.5,Conchoidal,Indistinct,Brittle
+39,Glauberite,Na2Ca(SO4)2,Non-silicate,Sulfate,Colorless,2.5,Conchoidal,Perfect,Brittle
+40,Glauconite,"(K,Na)(Fe,Al,Mg)2(Si,Al)4O10(OH)2",Silicate,Phyllosilicate,Green,2,Micaceous,Perfect,Elastic
+41,Goethite,FeO(OH),Non-silicate,Oxide,Multiple,5,Irregular,Perfect,Brittle
+42,Gold,Au,Non-silicate,Native Element,Yellow,2.5,Hackly,None,Malleable
+43,Graphite,C,Non-silicate,Native Element,Grey,1,Micaceous,Perfect,Flexible
+44,Gypsum,CaSO42H2O,Non-silicate,Sulfate,Colorless,1.5,Conchoidal,Perfect,Flexible
+45,Halite,NaCl,Non-silicate,Halide,Multiple,2.5,Conchoidal,Perfect,Brittle
+46,Halotrichite,FeAl2(SO4)4+22H2O,Non-silicate,Sulfate,Multiple,1.5,Conchoidal,Poor,Brittle
+47,Harmotome,"(Ba,K)1-2(Si,Al)8O16+6H2O",Silicate,Tectosilicate,Multiple,4,Irregular,Distinct,Brittle
+48,Hematite,Fe2O3,Non-silicate,Oxide,Grey,5,Sub-Conchoidal,None,Brittle
+49,Iron,Fe,Non-silicate,Native Element,Grey,4.5,Hackly,Imperfect,Malleable
+50,Ilmenite,FeTiO3,Non-silicate,Oxide,Black,5,Conchoidal,None,Brittle
+51,Jade,Ca2B6O6(OH)10+8H2O,Silicate,Inosilicate,Multiple,6,Splintery,Good,Brittle
+52,Jamesonite,Pb4FeSb6S14,Non-silicate,Sulfide,Grey,2.5,Uneven,Distinct,Brittle
+53,Kidwellite,NaF9(PO4)6(OH)10+5H2O,Non-silicate,Phosphate,Multiple,3,Splintery,Perfect,Brittle
+54,Kutnohorite,"Ca(Mn,Mg,Fe)(CO3)2",Non-silicate,Carbonate,Multiple,3.5,Sub-Conchoidal,Perfect,Brittle
+55,Kyanite,Al2SiO5,Silicate,Nesosilicate,Multiple,5.5,Splintery,Perfect,Brittle
+56,Labradorite,"(Na,Ca)(Al,Si)4O8",Silicate,Tectosilicate,Multiple,6,Conchoidal,Perfect,Brittle
+57,Langite,Cu4(SO4)(OH)6+2H2O,Non-silicate,Sulfate,Blue,2.5,Uneven,Distinct,Brittle
+58,Lazurite,"(Na,Ca)7-8(Al,Si)12(OS)24(SO4)Cl2(OH)2",Silicate,Tectosilicate,Blue,5,Uneven,Fair,Brittle
+59,Lead,Pb,Non-silicate,Native Element,Grey,1.5,Hackly,None,Malleable
+60,Leucite,KAlSi2O6,Silicate,Tectosilicate,Multiple,5.5,Conchoidal,Poor,Brittle
+61,Linarite,PbCu(SO4)(OH)2,Non-silicate,Sulfate,Blue,2.5,Conchoidal,Perfect,Brittle
+62,Luzonite,Cu3AsS4,Non-silicate,Sulfide,Brown,3.5,Conchoidal,Distinct,Brittle
+63,Magnesite,MgCO3,Non-silicate,Carbonate,Multiple,3.5,Conchoidal,Perfect,Brittle
+64,Manganite,MnO(OH),Non-silicate,Oxide,Black,4,Splintery,Perfect,Brittle
+65,Melilite,"(Ca,Na)2(Al,Mg)(Si,Al)2O7",Silicate,Sorosilicate,Brown,5,Uneven,Distinct,Brittle
+66,Mesolite,Na2Ca2Al6Si9O30+8H2O,Silicate,Tectosilicate,White,5,Irregular,Perfect,Brittle
+67,Neptunite,"KNa2Li(Fe,Mn)2Ti2Si8O24",Silicate,Inosilicate,Black,5,Conchoidal,Perfect,Brittle
+68,Nickeline,NiAs,Non-silicate,Sulfide,Red,5,Conchoidal,Imperfect,Brittle
+69,Opal,SiO2Â·nH2O,Silicate,Tectosilicate,Multiple,5.5,Conchoidal,None,Brittle
+70,Omphacite,"(Ca,Na)(Mg,Fe,Al)Si2O6",Silicate,Inosilicate,Green,5,Conchoidal,Distinct,Brittle
+71,Pectolite,NaCa2Si3O8(OH),Silicate,Inosilicate,Multiple,4.5,Irregular,Perfect,Brittle
+72,Phenakite,Be2SiO4,Silicate,Nesosilicate,Multiple,7.5,Conchoidal,Distinct,Brittle
+73,Pollucite,"(Cs,Na)2Al2Si4O12+H2O",Silicate,Tectosilicate,Colorless,6.5,Sub-Conchoidal,None,Very brittle
+74,Pyrite,FeS2,Non-silicate,Sulfide,Yellow,6,Conchoidal,Poor,Brittle
+75,Quartz,SiO2,Silicate,Tectosilicate,Multiple,7,Conchoidal,Poor,Brittle
+76,Rhodonite,"(Mn,Fe,Mg,Ca)SiO3",Silicate,Inosilicate,Red,5.5,Conchoidal,Perfect,Brittle
+77,Rosasite,"(Cu,Zn)2(CO3)(OH)2",Non-silicate,Carbonate,Blue,4.5,Splintery,Distinct,Brittle
+78,Sanidine,"(K,Na)(Si,Al)4O8",Silicate,Tectosilicate,White,6,Conchoidal,Perfect,Brittle
+79,Topaz,"Al2SiO4(F,OH)2",Silicate,Nesosilicate,Multiple,8,Sub-Conchoidal,Perfect,Brittle
+80,Turquoise,CuAl6(PO4)4(OH)8+4H2O,Non-silicate,Phosphate,Blue,5,Sub-Conchoidal,Perfect,Brittle
+81,Tridymite,SiO2,Silicate,Tectosilicate,Multiple,6.5,Conchoidal,Poor,Brittle
+82,Uvarovite,Ca3Cr2(SiO4)3,Silicate,Nesosilicate,Green,6.5,Conchoidal,None,Brittle
+83,Vesuvianite,Ca10Mg2Al4(SiO4)5(Si2O7)2(OH)4,Silicate,Sorosilicate,Multiple,6.5,Sub-Conchoidal,Poor,Brittle
+84,Villiaumite,NaF,Non-silicate,Halide,Multiple,2,Conchoidal,Perfect,Brittle
+85,Vivianite,Fe3(PO4)2+8H2O,Non-silicate,Phosphate,Multiple,1.5,Fibrous,Perfect,Sectile
+86,Wavellite,"Al3(PO4)2(OH,F)3+5H2O",Non-silicate,Phosphate,Multiple,3.5,Sub-Conchoidal,Perfect,Brittle
+87,Weloganite,Sr3Na2Zr(CO3)6+3H2O,Non-silicate,Carbonate,Multiple,3.5,Conchoidal,Perfect,Brittle
+88,Willemite,Zn2SiO4,Silicate,Nesosilicate,Multiple,5.5,Sub-Conchoidal,Distinct,Brittle
+89,Xenotime,YPO4,Non-silicate,Phosphate,Brown,4.5,Irregular,Good,Brittle
+90,Yavapaiite,KFe(SO4)2,Non-silicate,Sulfate,Pink,2.5,Sub-Conchoidal,Perfect,Very brittle
+91,Zoisite,Ca2Al3(SiO4)3(OH),Silicate,Sorosilicate,Multiple,6,Conchoidal,Perfect,Brittle
+92,Zincite,"(Zn,Mn)O",Non-silicate,Oxide,Multiple,4,Conchoidal,Perfect,Brittle
