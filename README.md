@@ -4,14 +4,15 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 
 * Last modified: November 23rd, 2016.
 * URL: http://kiddography.com/projects/minerals-app/client.html
-* Languages: HTML/CSS, Bootstrap, PHP, JavaScript, JQuery, AJAX, MySQL
+* Languages: HTML, CSS, JavaScript, JQuery, PHP, MySQL, AJAX
+* Frameworks: Bootstrap v.3.3.7
 
 ## **SOURCES** ##
 
 ### HTML/CSS: ###
-* [Bootstrap](http://getbootstrap.com/) - 3.3.7
+* [Bootstrap](http://getbootstrap.com/) - v3.3.7 © 2011-2016 Twitter, Inc.
 * [Fixed Top Navbar Example for Bootstrap](https://getbootstrap.com/examples/navbar-fixed-top/) - Bootstrap
-* [Font Awesome Icons](http://fontawesome.io/icons/) - 4.6.3 © Dave Gandy
+* [Font Awesome Icons](http://fontawesome.io/icons/) - v4.6.3 © Dave Gandy
 * [Glyphicons](http://glyphicons.com/) - © Jan Kovarik
 * [Default Sizes for Twitter Bootstrap’s Media Queries](https://scotch.io/tutorials/default-sizes-for-twitter-bootstraps-media-queries) - © Mar 04, 2014, Nicholas Cerminara (Scotch.io).
 * [Device Media Queries](http://resizr.co/) - © Piers Rueb
@@ -19,10 +20,10 @@ Small-scale app that demonstrates how PHP can interact with a MySQL database wit
 
 
 ### JavaScript/JQuery: ###
-* [JQuery](https://jquery.com/) - 2.2.2
-* [JQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) - v1.3
-* [JQuery UI](https://jqueryui.com/) - 1.10.4
-* [jQuery Waypoints](https://jqueryui.com/) - 2.0.3 - © 2011-2013 Caleb Troughton
+* [JQuery](https://jquery.com/) - v2.2.2 © JS Foundation
+* [JQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) - v1.3 © GSGD
+* [JQuery UI](https://jqueryui.com/) - v1.10.4 © JS Foundation
+* [jQuery Waypoints](https://jqueryui.com/) - v2.0.3 - © 2011-2013 Caleb Troughton
 * [Counter-Up](https://github.com/bfintal/Counter-Up) - © Benjamin Intal
 * [Collapsible Accordion](http://www.w3schools.com/howto/howto_js_accordion.asp) - w3schools.com - © w3schools.com.
 
