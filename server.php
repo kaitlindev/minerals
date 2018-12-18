@@ -1,7 +1,8 @@
 <?php
+include 'database.php';
 
   // [1.] Connect to MySQL Server
-  $con = mysqli_connect( "localhost", "kiddogra", "KaitlinHuss14!" , "kiddogra_minerals" );
+  $con = mysqli_connect($host, $username, $password , $db_name);
 
   // [2.] Check connection
   // If successful, continue...
@@ -164,7 +165,7 @@ echo "</table";
 *********** SEARCH COMPOSITION ******************
 ****************************************************/
 if ($mineral_composition!= null) {
-  $query = "SELECT * FROM minerals WHERE composition LIKE '%$mineral_composition%'"; 
+  $query = "SELECT * FROM minerals WHERE composition LIKE '%$mineral_composition%'";
   $show = mysqli_query($con, $query) or die ("Error");
   echo $tableHeaderComposition;
 
